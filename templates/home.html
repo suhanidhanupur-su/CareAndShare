@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Care &amp; Share Society Sardhana - Together We Care, Together We Share{% endblock %}
+
+{% block content %}
+<!-- ================= HERO CAROUSEL ================= -->
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="5000">
+      <img src="{% static 'images/slide-5.jpg' %}" class="d-block w-100" alt="Moving Step by Step">
+      <div class="carousel-caption d-none d-md-block">
+        <h2 class="text-white text-uppercase">MOVING STEP BY STEP</h2>
+        <p class="lead">We strive to share the burden of the less fortunate, through the efforts of those who have more than enough resources</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="{% static 'images/slide-4.jpg' %}" class="d-block w-100" alt="Moving Step by Step">
+      <div class="carousel-caption d-none d-md-block">
+        <h2 class="text-white text-uppercase">MOVING STEP BY STEP</h2>
+        <p class="lead">We strive to share the burden of the less fortunate, through the efforts of those who have more than enough resources</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- ================= WELCOME SECTION ================= -->
+<div class="container-fluid sec-welcome" id="about">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center px-md-4">
+        <h4>Sharing is Absolute Caring</h4>
+        <h3 class="text-uppercase">CARE &amp; SHARE SOCIETY, SARDHANA</h3>
+        <p class="mb-4">
+          Care &amp; Share Society, Sardhana is a non-profit organization dedicated to serving humanity and supporting the welfare of the community. Under the guidance and leadership of our respected senior social worker, Ainuddine Shah Ji, the society strives to uplift the lives of underprivileged and less fortunate individuals through various healthcare, educational, social welfare, and community development initiatives.
+        </p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="#programmes" class="btn btn-primary">OUR PROGRAMMES</a>
+          <a href="{% url 'about' %}" class="btn btn-secondary">MORE ABOUT US</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PATRON / LEADER MESSAGE SECTION ================= -->
+<div class="container-fluid g-0 sec-message" id="patron">
+  <div class="row g-0 align-items-stretch">
+    <div class="col-md-5 d-none d-md-block">
+      <img src="{% static 'images/ainuddin_shah.jpg' %}" alt="Mr. Ainuddin Shah" class="img-fluid h-100 object-fit-cover">
+    </div>
+    <div class="col-md-7 p-4 p-lg-5 d-flex flex-column justify-content-center">
+      <div class="d-md-none text-center mb-4">
+        <img src="{% static 'images/ainuddin_shah.jpg' %}" alt="Mr. Ainuddin Shah" class="img-fluid rounded shadow-sm" style="max-height: 350px;">
+      </div>
+      <h4>IT IS NOW OR NEVER !</h4>
+      <p class="fw-bold mb-3 text-white">Dear Friends &amp; Well-Wishers,</p>
+      <p class="mb-3 text-justify">
+        We strongly believe that every individual deserves an opportunity to live a healthy, dignified, and fulfilling life. We are all bound by our duty to society and to our fellow citizens. We should commit ourselves to helping the less fortunate and the needy by sharing our resources with those who are deprived. This is the right time to come forward and support this noble cause of care and share. Every contribution and helping hand of yours will be fully utilized to uplift communities and bring hope to families in need.
+      </p>
+      <p class="mb-3 fst-italic text-white">Looking forward to your compassionate support and participation.</p>
+      <p class="fw-bold mb-1 text-white">With Warm Regards,</p>
+      <h5 class="mb-0">Mr. Ainuddin Shah</h5>
+      <small class="text-white-50">Senior Social Worker &bull; Care &amp; Share Society, Sardhana</small>
+    </div>
+  </div>
+</div>
+
+<!-- ================= INITIATIVES / PROGRAMMES SECTION ================= -->
+<div class="container-fluid sec-program" id="programmes">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 pb-4 text-center">
+        <h2>Our Initiatives</h2>
+        <p class="text-muted">We strive to uplift the lives of the less fortunate through various healthcare and educational programmes.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <!-- Card 1: Hridayasparsham -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100">
+          <img src="{% static 'images/hridayasparsham-1.jpg' %}" class="card-img-top" alt="Hridayasparsham">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Hridayasparsham (Pro Heart)</h5>
+            <p class="card-text flex-grow-1">Hridayasparsham is the first flagship initiative of Care and Share Foundation. The programme focuses on paediatric cardiology and life-saving heart surgeries for children.</p>
+            <p class="card-text text-end mt-3 mb-0">
+              <a href="#about" class="read-more">Read More <i class="fa-solid fa-angles-right"></i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Vazhikatti -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100">
+          <img src="{% static 'images/vazhikatti-1.jpg' %}" class="card-img-top" alt="Vazhikatti">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Vazhikatti (Guide)</h5>
+            <p class="card-text flex-grow-1">Care and Share Foundation announced an intensive awareness campaign against drugs and substance abuse called Vazhikatti to guide the youth toward a better tomorrow.</p>
+            <p class="card-text text-end mt-3 mb-0">
+              <a href="#about" class="read-more">Read More <i class="fa-solid fa-angles-right"></i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Vidhya Amruthu -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100">
+          <img src="{% static 'images/vidhyamrutham-1.jpg' %}" class="card-img-top" alt="Vidhya Amruthu">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Vidhya Amruthu</h5>
+            <p class="card-text flex-grow-1">Care and Share Foundation started its third venture "Vidhya Amruthu" to provide quality educational aid, learning materials, and scholarships to needy students.</p>
+            <p class="card-text text-end mt-3 mb-0">
+              <a href="#about" class="read-more">Read More <i class="fa-solid fa-angles-right"></i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- More Programmes Button -->
+    <div class="row">
+      <div class="col-lg-12 pt-5 text-center">
+        <a href="#programmes" class="btn btn-secondary text-white">MORE PROGRAMMES</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us - Care &amp; Share Society Sardhana{% endblock %}
+
+{% block content %}
+<!-- ================= INNER BANNER ================= -->
+<div class="container-fluid g-0 banner-inner">
+  <img src="{% static 'images/banner-inner.jpg' %}" alt="About Care &amp; Share Society" class="img-fluid w-100">
+</div>
+
+<!-- ================= ABOUT CONTENT ================= -->
+<div class="container-fluid py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div class="card about-card rounded-4 p-4 p-md-5">
+          
+          <!-- Heading -->
+          <div class="row">
+            <div class="col-12">
+              <h3 class="page-head">ABOUT US</h3>
+              <h4 class="text-orange fw-bold mb-3">Care &amp; Share Society, Sardhana</h4>
+              <p class="lead fs-6 text-secondary mb-3">
+                Care &amp; Share Society, Sardhana is a non-profit organization dedicated to serving humanity and supporting the welfare of the community. Under the guidance and leadership of our respected senior social worker, Ainuddine Shah Ji, the society strives to uplift the lives of underprivileged and less fortunate individuals through various healthcare, educational, social welfare, and community development initiatives.
+              </p>
+              <p class="text-secondary mb-4">
+                We strongly believe that every individual deserves an opportunity to live a healthy, dignified, and fulfilling life. Through the spirit of care, sharing, compassion, and collective responsibility, we aim to create a positive and meaningful difference in society.
+              </p>
+            </div>
+          </div>
+
+          <!-- Leadership Spotlight: Mr. Ainuddin Shah -->
+          <div class="row my-4">
+            <div class="col-12">
+              <div class="card border-0 shadow-sm overflow-hidden" style="background-color: #fbf8f5;">
+                <div class="row g-0 align-items-center">
+                  <div class="col-md-4 text-center">
+                    <img src="{% static 'images/ainuddin_shah.jpg' %}" alt="Mr. Ainuddin Shah" class="img-fluid w-100 object-fit-cover" style="max-height: 380px;">
+                  </div>
+                  <div class="col-md-8 p-4 p-lg-5">
+                    <span class="leader-badge mb-2">LEADERSHIP &amp; GUIDANCE</span>
+                    <h3 class="fw-bold text-dark mb-1">Mr. Ainuddin Shah</h3>
+                    <p class="text-orange fw-semibold mb-3">Senior Social Worker &bull; Care &amp; Share Society</p>
+                    <p class="text-secondary mb-3">
+                      "Serving humanity is our highest moral duty. Through Care &amp; Share Society Sardhana, we have resolved to reach the poorest and most vulnerable, ensuring that lack of resources never denies a child an education or a patient life-saving healthcare."
+                    </p>
+                    <p class="text-muted small mb-0">
+                      Under his compassionate vision, our volunteers actively run relief camps, educational support drives, and healthcare outreach programmes throughout the region.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vision & Mission Cards -->
+          <div class="row g-4 my-2">
+            <!-- Our Vision -->
+            <div class="col-lg-6">
+              <div class="card h-100 bg-pink vision-mission-card p-4 text-center shadow-sm">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <i class="fa-regular fa-eye fa-2x text-orange"></i>
+                  </div>
+                  <h4 class="text-orange fw-bold mb-3">Our Vision</h4>
+                  <p class="text-dark mb-0">
+                    To build a society free from the hardships of poverty and ill health, where every individual has access to better opportunities and a quality life. We aspire to bridge the gap between those who have resources in abundance and those who are deprived, promoting equality, dignity, and social well-being.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Our Mission -->
+            <div class="col-lg-6">
+              <div class="card h-100 bg-pink vision-mission-card p-4 text-center shadow-sm">
+                <div class="card-body">
+                  <div class="mb-3">
+                    <i class="fa-solid fa-bullseye fa-2x text-orange"></i>
+                  </div>
+                  <h4 class="text-orange fw-bold mb-3">Our Mission</h4>
+                  <p class="text-dark mb-0">
+                    Our mission is to share resources and opportunities from those who have them in surplus with those who are in need. Through meaningful initiatives in healthcare, education, and social welfare, we strive to support the underprivileged, empower communities, and help create a better and more compassionate society for all.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Logo & Philosophy Section -->
+          <div class="row mt-5 pt-3">
+            <div class="col-12">
+              <div class="card bg-white border p-4 rounded-3">
+                <div class="row align-items-center g-4">
+                  <div class="col-md-3 text-center">
+                    <img src="{% static 'images/logo.png' %}" alt="Care &amp; Share Society Emblem" class="img-fluid" style="max-height: 160px;">
+                  </div>
+                  <div class="col-md-9">
+                    <h4 class="text-orange fw-bold mb-2">Our Emblem &amp; Philosophy</h4>
+                    <h6 class="text-muted mb-3 fst-italic">"Together We Care, Together We Share"</h6>
+                    <p class="text-secondary mb-0">
+                      The Care &amp; Share Society Sardhana emblem embodies the sacred bond between those who give and those in need. The protective hands symbolize sheltering the vulnerable, while the open book and growing sapling represent our commitment to empowering youth through education and community health. Together, we work towards a society grounded in compassion, mutual support, and dignity for all.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

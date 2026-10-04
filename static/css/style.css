@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Roboto+Slab:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  background: #fff url('../images/body_bg.jpg') repeat;
+  line-height: 24px;
+  color: #313131;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', serif;
+  color: #313131;
+}
+
+/* Header Top */
+.header-top {
+  background: #be6e4e url('../images/bg_top.jpg') repeat;
+}
+.header-top p {
+  margin: 0;
+  color: #f7e9e1;
+  font-size: 15px;
+}
+.header-top a {
+  color: #f7e9e1;
+  text-decoration: none;
+}
+.header-top a:hover {
+  color: #ffffff;
+}
+.header-top i {
+  margin-right: 8px;
+}
+
+/* Navbar */
+.navbar {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+}
+.navbar-brand img.brand-logo {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+.navbar-brand .brand-title {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #313131;
+  line-height: 1.2;
+}
+.navbar-brand .brand-tagline {
+  font-size: 12px;
+  color: #be6e4e;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: block;
+}
+.navbar-nav .nav-link {
+  color: #313131;
+  font-weight: 600;
+  font-size: 13.5px;
+  padding: 8px 14px !important;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease-in-out;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #be6e4e !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #be6e4e;
+  border: 2px solid #be6e4e;
+  color: #fff;
+  border-radius: 0;
+  padding: 12px 28px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background: #a8593b;
+  border-color: #a8593b;
+  color: #fff;
+}
+.btn-secondary {
+  background: #2a2a2a;
+  border: 2px solid #2a2a2a;
+  color: #fff;
+  border-radius: 0;
+  padding: 12px 28px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover, .btn-secondary:focus {
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+  color: #fff;
+}
+
+/* Carousel */
+.carousel-item {
+  height: 520px;
+}
+.carousel-item img {
+  height: 520px;
+  width: 100%;
+  object-fit: cover;
+}
+.carousel-caption {
+  bottom: 25%;
+  background: rgba(20, 20, 20, 0.7);
+  padding: 30px 40px;
+  border-radius: 4px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.carousel-caption h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+.carousel-caption p.lead {
+  font-size: 17px;
+  line-height: 28px;
+  margin-bottom: 0;
+  color: #f0f0f0;
+}
+
+/* Section Welcome */
+.sec-welcome {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+.sec-welcome h4 {
+  color: #313131;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.sec-welcome h3 {
+  color: #be6e4e;
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 25px;
+  letter-spacing: 0.8px;
+}
+.sec-welcome p {
+  font-size: 15px;
+  line-height: 26px;
+  color: #666;
+}
+
+/* Section Message */
+.sec-message {
+  background-color: #2a2a2a;
+}
+.sec-message img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sec-message h4 {
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.sec-message p {
+  color: #c5c5c5;
+  font-size: 14px;
+  line-height: 25px;
+}
+.sec-message h5 {
+  color: #be6e4e;
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+/* Section Programmes / Initiatives */
+.sec-program {
+  background-color: #f0e2d3;
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+.sec-program h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #313131;
+  margin-bottom: 10px;
+}
+.sec-program .card {
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.sec-program .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+.sec-program .card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+.sec-program .card-title {
+  color: #be6e4e;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.sec-program .card-text {
+  color: #555;
+  font-size: 13.5px;
+  line-height: 22px;
+}
+.sec-program a.read-more {
+  color: #be6e4e;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+}
+.sec-program a.read-more:hover {
+  color: #a8593b;
+  text-decoration: underline;
+}
+
+/* Footer Join / Volunteer */
+.footer-join {
+  background-color: #201f1e;
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+.footer-join-box {
+  border: 1px dashed #444342;
+  padding: 24px 30px;
+  align-items: center;
+}
+.footer-join p {
+  font-size: 16px;
+  font-style: italic;
+  color: #aaa;
+  margin-bottom: 0;
+  line-height: 24px;
+}
+.footer-join p span {
+  color: #eee;
+}
+
+/* Footer Main */
+.footer-top {
+  background-color: #201f1e;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  border-top: 1px solid #2d2c2b;
+}
+.footer-top h5 {
+  color: #e5e5e5;
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.footer-top p {
+  color: #8e8d8d;
+  line-height: 24px;
+  font-size: 13.5px;
+}
+.footer-top p.call {
+  color: #be6e4e;
+  font-weight: 700;
+  margin-top: 15px;
+  font-size: 20px;
+}
+.footer-top p.msg {
+  color: #8e8d8d;
+  margin-top: 5px;
+}
+.footer-top p.msg a {
+  color: #8e8d8d;
+  text-decoration: none;
+}
+.footer-top p.msg a:hover {
+  color: #be6e4e;
+}
+.footer-top ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer-top ul li {
+  margin-bottom: 10px;
+}
+.footer-top ul li a {
+  color: #8e8d8d;
+  text-decoration: none;
+  font-size: 13.5px;
+  transition: color 0.2s ease;
+}
+.footer-top ul li a:hover {
+  color: #be6e4e;
+}
+.footer-top ul li i {
+  margin-right: 8px;
+  color: #be6e4e;
+}
+
+/* Social icons */
+ul.footer-social {
+  margin-top: 20px;
+}
+ul.footer-social li {
+  display: inline-block;
+  margin-right: 8px;
+}
+ul.footer-social li a {
+  color: #8e8d8d;
+  text-decoration: none;
+}
+ul.footer-social li i {
+  color: #8e8d8d;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #555;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+ul.footer-social li i:hover {
+  color: #fff;
+  background-color: #be6e4e;
+  border-color: #be6e4e;
+}
+
+/* Footer Bottom */
+.footer-btm {
+  background-color: #191818;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  font-size: 13px;
+  color: #666;
+  border-top: 1px solid #232222;
+}
+.footer-btm p {
+  margin: 0;
+}
+.footer-btm a {
+  color: #888;
+  text-decoration: none;
+}
+.footer-btm a:hover {
+  color: #be6e4e;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 360px;
+  }
+  .carousel-item img {
+    height: 360px;
+  }
+  .carousel-caption {
+    bottom: 15%;
+    padding: 15px 20px;
+  }
+  .carousel-caption h2 {
+    font-size: 24px;
+  }
+  .carousel-caption p.lead {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .navbar-brand img.brand-logo {
+    height: 60px;
+  }
+  .navbar-brand .brand-title {
+    font-size: 16px;
+  }
+}
+
+/* Inner Page Headings & Components */
+.page-head {
+  background: url('../images/head_bg.jpg') no-repeat bottom left;
+  padding-bottom: 18px;
+  margin-bottom: 25px;
+  font-size: 26px;
+  line-height: 24px;
+  color: #313131;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.text-orange {
+  color: #be6e4e !important;
+}
+.bg-pink {
+  background-color: #f0e2d3 !important;
+}
+.banner-inner img {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+}
+.about-card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: none;
+  background-color: #ffffff;
+}
+.vision-mission-card {
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+.vision-mission-card:hover {
+  transform: translateY(-3px);
+}
+.leader-card {
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.leader-badge {
+  background-color: #be6e4e;
+  color: #fff;
+  padding: 5px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
