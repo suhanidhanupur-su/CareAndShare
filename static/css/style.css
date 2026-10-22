@@ -14,70 +14,275 @@ h1, h2, h3, h4, h5, h6 {
   color: #313131;
 }
 
-/* Header Top */
-.header-top {
-  background: #be6e4e url('../images/bg_top.jpg') repeat;
-}
-.header-top p {
-  margin: 0;
-  color: #f7e9e1;
-  font-size: 15px;
-}
-.header-top a {
-  color: #f7e9e1;
-  text-decoration: none;
-}
-.header-top a:hover {
-  color: #ffffff;
-}
-.header-top i {
-  margin-right: 8px;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Navbar */
-.navbar {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+/* =========================================
+   CSS DESIGN SYSTEM / COLOR PALETTE
+========================================= */
+:root {
+  --color-bg-warm: #FFFEFC;
+  --color-text-primary: #292522;
+  --color-text-secondary: #76685F;
+  --color-brand-accent: #B65E3C;
+  --color-border-subtle: #EAE3DC;
+  --navbar-height-desktop: 104px;
 }
+
+/* Smooth Anchor Scrolling with Sticky Navbar Offset */
+html {
+  scroll-behavior: smooth;
+}
+[id] {
+  scroll-margin-top: 112px;
+}
+
+/* =========================================
+   MAIN NAVBAR (PREMIUM REDESIGN: 95-110px)
+========================================= */
+.navbar {
+  min-height: var(--navbar-height-desktop);
+  padding-top: 14px;
+  padding-bottom: 14px;
+  background-color: var(--color-bg-warm) !important;
+  border-bottom: 1px solid var(--color-border-subtle);
+  box-shadow: 0 4px 20px rgba(41, 37, 34, 0.035);
+  transition: all 0.25s ease-in-out;
+  z-index: 1030;
+}
+
+/* =========================================
+   LEFT SIDE — BRANDING
+========================================= */
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 18px;
   text-decoration: none;
+  padding: 0;
+  margin: 0;
 }
+
 .navbar-brand img.brand-logo {
-  height: 80px;
+  height: 74px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  border-radius: 50%;
+  filter: drop-shadow(0 2px 6px rgba(41, 37, 34, 0.08));
+  transition: transform 0.25s ease;
 }
-.navbar-brand .brand-title {
+
+.navbar-brand:hover img.brand-logo {
+  transform: scale(1.025);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-title {
   font-family: 'Roboto Slab', serif;
   font-weight: 700;
   font-size: 20px;
-  color: #313131;
-  line-height: 1.2;
+  color: var(--color-text-primary);
+  line-height: 1.25;
+  letter-spacing: 0.75px;
+  margin: 0;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
 }
-.navbar-brand .brand-tagline {
-  font-size: 12px;
-  color: #be6e4e;
+
+.navbar-brand:hover .brand-title {
+  color: var(--color-brand-accent);
+}
+
+.brand-tagline {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11px;
+  color: var(--color-brand-accent);
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.85px;
   display: block;
+  line-height: 1.2;
+  margin-top: 4px;
+  text-transform: uppercase;
 }
+
+/* =========================================
+   RIGHT SIDE — NAVIGATION LINKS
+========================================= */
+.navbar-nav {
+  align-items: center;
+  gap: 2px;
+}
+
 .navbar-nav .nav-link {
-  color: #313131;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--color-text-primary) !important;
   font-weight: 600;
-  font-size: 13.5px;
-  padding: 8px 14px !important;
+  font-size: 13px;
   letter-spacing: 0.5px;
-  transition: color 0.2s ease-in-out;
+  text-transform: uppercase;
+  padding: 10px 12px !important;
+  margin: 0 1px;
+  position: relative;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  border-radius: 4px;
 }
-.navbar-nav .nav-link:hover,
+
+.navbar-nav .nav-link:hover {
+  color: var(--color-brand-accent) !important;
+}
+
 .navbar-nav .nav-link.active {
-  color: #be6e4e !important;
+  color: var(--color-brand-accent) !important;
+}
+
+/* Tasteful Underline Accent Indicator for Desktop */
+@media (min-width: 992px) {
+  .navbar-nav .nav-link {
+    position: relative;
+    padding: 10px 12px !important;
+  }
+  .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 12px;
+    right: 12px;
+    height: 2.5px;
+    background-color: var(--color-brand-accent);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .navbar-nav .nav-link:hover::after {
+    transform: scaleX(0.7);
+  }
+  .navbar-nav .nav-link.active::after {
+    transform: scaleX(1);
+  }
+}
+
+/* =========================================
+   TABLET LANDSCAPE (992px - 1199px)
+========================================= */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .navbar {
+    min-height: 95px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .navbar-brand {
+    gap: 12px;
+  }
+  .navbar-brand img.brand-logo {
+    height: 62px;
+  }
+  .brand-title {
+    font-size: 17px;
+    letter-spacing: 0.4px;
+  }
+  .brand-tagline {
+    font-size: 9.5px;
+    letter-spacing: 0.5px;
+  }
+  .navbar-nav .nav-link {
+    font-size: 11.5px;
+    padding: 8px 7px !important;
+    letter-spacing: 0.25px;
+  }
+  .navbar-nav .nav-link::after {
+    left: 7px;
+    right: 7px;
+  }
+}
+
+/* =========================================
+   MOBILE TOGGLER & OFFCANVAS
+========================================= */
+.navbar-toggler {
+  border: 1px solid var(--color-border-subtle);
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: var(--color-bg-warm);
+  transition: all 0.2s ease;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(182, 94, 60, 0.18);
+  border-color: var(--color-brand-accent);
+}
+
+.navbar-toggler-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.offcanvas {
+  max-width: 85vw;
+  width: 320px;
+  background-color: var(--color-bg-warm);
+}
+
+.offcanvas-header {
+  background-color: #F9F6F0;
+  border-bottom: 1px solid var(--color-border-subtle) !important;
+  padding: 16px 20px;
+}
+
+.offcanvas-logo {
+  height: 48px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.offcanvas-body {
+  padding: 20px;
+}
+
+.offcanvas-body .nav-link {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-text-primary) !important;
+  padding: 12px 16px !important;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: normal;
+}
+
+.offcanvas-body .nav-link:hover,
+.offcanvas-body .nav-link.active {
+  background-color: rgba(182, 94, 60, 0.08);
+  color: var(--color-brand-accent) !important;
+}
+
+.offcanvas-footer {
+  border-top: 1px solid var(--color-border-subtle) !important;
+  padding-top: 16px;
+}
+
+.offcanvas-footer .btn {
+  border-color: var(--color-border-subtle);
+  color: var(--color-text-primary);
+  background-color: #ffffff;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.offcanvas-footer .btn:hover {
+  border-color: var(--color-brand-accent);
+  color: var(--color-brand-accent);
+  background-color: rgba(182, 94, 60, 0.05);
 }
 
 /* Buttons */
@@ -124,6 +329,12 @@ h1, h2, h3, h4, h5, h6 {
   height: 520px;
   width: 100%;
   object-fit: cover;
+}
+.carousel-item img.hero-slide-ainuddin {
+  object-position: 85% center;
+}
+.carousel-item img.hero-slide-ainuddin-2 {
+  object-position: 15% center;
 }
 .carousel-caption {
   bottom: 25%;
@@ -376,12 +587,26 @@ ul.footer-social li i:hover {
 }
 
 /* Responsive tweaks */
+@media (max-width: 991.98px) {
+  .navbar {
+    min-height: 74px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
 @media (max-width: 768px) {
   .carousel-item {
     height: 360px;
   }
   .carousel-item img {
     height: 360px;
+  }
+  .carousel-item img.hero-slide-ainuddin {
+    object-position: 85% center;
+  }
+  .carousel-item img.hero-slide-ainuddin-2 {
+    object-position: 15% center;
   }
   .carousel-caption {
     bottom: 15%;
@@ -394,11 +619,34 @@ ul.footer-social li i:hover {
     font-size: 14px;
     line-height: 20px;
   }
-  .navbar-brand img.brand-logo {
-    height: 60px;
+}
+
+@media (max-width: 575.98px) {
+  .navbar-brand {
+    gap: 10px;
   }
-  .navbar-brand .brand-title {
-    font-size: 16px;
+  .navbar-brand img.brand-logo {
+    height: 48px;
+  }
+  .brand-title {
+    font-size: 14.5px;
+    letter-spacing: 0.3px;
+  }
+  .brand-tagline {
+    font-size: 9px;
+    letter-spacing: 0.3px;
+  }
+}
+
+@media (max-width: 380px) {
+  .navbar-brand img.brand-logo {
+    height: 42px;
+  }
+  .brand-title {
+    font-size: 13px;
+  }
+  .brand-tagline {
+    display: none;
   }
 }
 
@@ -423,6 +671,123 @@ ul.footer-social li i:hover {
   width: 100%;
   max-height: 260px;
   object-fit: cover;
+}
+
+/* =========================================
+   ABOUT PAGE HERO BANNER
+========================================= */
+.about-banner {
+  background: linear-gradient(105deg, #c4a55c 0%, #ecd79b 40%, #f4e7b8 70%, #d8be7c 100%);
+  border-bottom: 1px solid rgba(196, 165, 92, 0.35);
+  box-shadow: inset 0 -3px 12px rgba(41, 37, 34, 0.05);
+  position: relative;
+  overflow: hidden;
+  padding: 18px 0;
+}
+
+.about-banner-title {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: #24201d;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+}
+
+.about-banner-lead {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #3a342f;
+  max-width: 660px;
+}
+
+.about-banner-portrait-container {
+  display: inline-block;
+  position: relative;
+  max-width: 140px;
+}
+
+.about-banner-portrait {
+  height: 155px !important;
+  width: 130px !important;
+  max-height: 155px !important;
+  max-width: 130px !important;
+  object-fit: cover !important;
+  object-position: center 20% !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(41, 37, 34, 0.18);
+  border: 3px solid rgba(255, 255, 255, 0.95);
+  transition: transform 0.25s ease;
+  display: block;
+}
+
+.about-banner-portrait:hover {
+  transform: translateY(-2px);
+}
+
+/* Leadership Card Photo Box */
+.leader-photo-box {
+  display: inline-block;
+  width: 170px;
+  height: 210px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(41, 37, 34, 0.12);
+  border: 3px solid #ffffff;
+  background-color: #ffffff;
+}
+
+.leader-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 0.25s ease;
+}
+
+.leader-photo:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 991.98px) {
+  .about-banner {
+    padding: 16px 0;
+  }
+  .about-banner-title {
+    font-size: 22px;
+  }
+  .about-banner-lead {
+    font-size: 13.5px;
+  }
+  .about-banner-portrait {
+    height: 135px;
+    width: 115px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .leader-photo-box {
+    width: 140px;
+    height: 170px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .about-banner {
+    padding: 14px 0;
+  }
+  .about-banner-title {
+    font-size: 19px;
+  }
+  .about-banner-lead {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .about-banner-portrait {
+    height: 115px;
+    width: 100px;
+  }
 }
 .about-card {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);

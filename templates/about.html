@@ -3,10 +3,99 @@
 
 {% block title %}About Us - Care &amp; Share Society Sardhana{% endblock %}
 
+{% block extra_css %}
+<style>
+  .about-banner {
+    background: linear-gradient(105deg, #c4a55c 0%, #ecd79b 40%, #f4e7b8 70%, #d8be7c 100%) !important;
+    border-bottom: 1px solid rgba(196, 165, 92, 0.35) !important;
+    padding: 18px 0 !important;
+    overflow: hidden !important;
+  }
+  .about-banner-portrait-container {
+    display: inline-block !important;
+    position: relative !important;
+    max-width: 140px !important;
+  }
+  .about-banner-portrait {
+    width: 130px !important;
+    height: 155px !important;
+    max-width: 130px !important;
+    max-height: 155px !important;
+    object-fit: cover !important;
+    object-position: center 20% !important;
+    border-radius: 12px !important;
+    border: 3px solid #ffffff !important;
+    box-shadow: 0 4px 16px rgba(41, 37, 34, 0.18) !important;
+    display: block !important;
+    margin-left: auto !important;
+  }
+  .leader-photo-box {
+    width: 170px !important;
+    height: 210px !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+    border-radius: 12px !important;
+    border: 3px solid #ffffff !important;
+    box-shadow: 0 6px 18px rgba(41, 37, 34, 0.12) !important;
+    background-color: #ffffff !important;
+  }
+  .leader-photo {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 170px !important;
+    max-height: 210px !important;
+    object-fit: cover !important;
+    object-position: center 20% !important;
+    display: block !important;
+  }
+  @media (max-width: 767.98px) {
+    .about-banner-portrait {
+      width: 110px !important;
+      height: 130px !important;
+      max-width: 110px !important;
+      max-height: 130px !important;
+      margin: 0 auto !important;
+    }
+    .leader-photo-box {
+      width: 140px !important;
+      height: 170px !important;
+    }
+  }
+  @media (max-width: 575.98px) {
+    .about-banner-portrait {
+      width: 90px !important;
+      height: 110px !important;
+      max-width: 90px !important;
+      max-height: 110px !important;
+    }
+  }
+</style>
+{% endblock %}
+
 {% block content %}
-<!-- ================= INNER BANNER ================= -->
-<div class="container-fluid g-0 banner-inner">
-  <img src="{% static 'images/banner-inner.jpg' %}" alt="About Care &amp; Share Society" class="img-fluid w-100">
+<!-- ================= ABOUT PAGE HERO BANNER ================= -->
+<div class="container-fluid g-0 about-banner" style="background: linear-gradient(105deg, #c4a55c 0%, #ecd79b 40%, #f4e7b8 70%, #d8be7c 100%); border-bottom: 1px solid rgba(196, 165, 92, 0.35); padding: 18px 0; overflow: hidden;">
+  <div class="container">
+    <div class="row align-items-center g-3 g-md-4">
+      <div class="col-8 col-md-8 col-lg-9 py-2 text-start">
+        <h2 class="about-banner-title mb-2" style="font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 26px; color: #24201d; letter-spacing: 0.5px; line-height: 1.25;">Care &amp; Share Society, Sardhana</h2>
+        <p class="about-banner-lead mb-0" style="font-family: 'Open Sans', sans-serif; font-size: 14.5px; line-height: 1.55; color: #3a342f; max-width: 660px;">
+          A non-profit organization dedicated to serving humanity and supporting the welfare of the community under the guidance and leadership of our respected senior social worker, <span class="fw-bold" style="color: #1a1816;">Mr. Ainuddin Shah</span>.
+        </p>
+      </div>
+      <div class="col-4 col-md-4 col-lg-3 text-end py-1">
+        <div class="about-banner-portrait-container" style="display: inline-block; position: relative; max-width: 140px;">
+          <img src="{% static 'images/ainuddin_shah.jpg' %}" 
+               alt="Mr. Ainuddin Shah - Senior Social Worker" 
+               class="about-banner-portrait img-fluid"
+               width="130"
+               height="155"
+               style="width: 130px; height: 155px; max-width: 130px; max-height: 155px; object-fit: cover; object-position: center 20%; border-radius: 12px; box-shadow: 0 4px 16px rgba(41, 37, 34, 0.18); border: 3px solid #ffffff; display: block; margin-left: auto;">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ================= ABOUT CONTENT ================= -->
@@ -22,7 +111,7 @@
               <h3 class="page-head">ABOUT US</h3>
               <h4 class="text-orange fw-bold mb-3">Care &amp; Share Society, Sardhana</h4>
               <p class="lead fs-6 text-secondary mb-3">
-                Care &amp; Share Society, Sardhana is a non-profit organization dedicated to serving humanity and supporting the welfare of the community. Under the guidance and leadership of our respected senior social worker, Ainuddine Shah Ji, the society strives to uplift the lives of underprivileged and less fortunate individuals through various healthcare, educational, social welfare, and community development initiatives.
+                Care &amp; Share Society, Sardhana is a non-profit organization dedicated to serving humanity and supporting the welfare of the community. Under the guidance and leadership of our respected senior social worker, Ainuddin Shah Ji, the society strives to uplift the lives of underprivileged and less fortunate individuals through various healthcare, educational, social welfare, and community development initiatives.
               </p>
               <p class="text-secondary mb-4">
                 We strongly believe that every individual deserves an opportunity to live a healthy, dignified, and fulfilling life. Through the spirit of care, sharing, compassion, and collective responsibility, we aim to create a positive and meaningful difference in society.
@@ -33,14 +122,21 @@
           <!-- Leadership Spotlight: Mr. Ainuddin Shah -->
           <div class="row my-4">
             <div class="col-12">
-              <div class="card border-0 shadow-sm overflow-hidden" style="background-color: #fbf8f5;">
+              <div class="card border-0 shadow-sm overflow-hidden leader-card" style="background-color: #fbf8f5;">
                 <div class="row g-0 align-items-center">
-                  <div class="col-md-4 text-center">
-                    <img src="{% static 'images/ainuddin_shah.jpg' %}" alt="Mr. Ainuddin Shah" class="img-fluid w-100 object-fit-cover" style="max-height: 380px;">
+                  <div class="col-md-4 col-lg-3 text-center p-3 p-md-4">
+                    <div class="leader-photo-box" style="width: 170px; height: 210px; max-width: 100%; margin: 0 auto; overflow: hidden; border-radius: 12px; border: 3px solid #ffffff; box-shadow: 0 6px 18px rgba(41, 37, 34, 0.12); background-color: #ffffff;">
+                      <img src="{% static 'images/ainuddin_shah.jpg' %}" 
+                           alt="Mr. Ainuddin Shah" 
+                           class="leader-photo img-fluid"
+                           width="170"
+                           height="210"
+                           style="width: 100%; height: 100%; max-width: 170px; max-height: 210px; object-fit: cover; object-position: center 20%; display: block;">
+                    </div>
                   </div>
-                  <div class="col-md-8 p-4 p-lg-5">
+                  <div class="col-md-8 col-lg-9 p-4 pe-lg-5">
                     <span class="leader-badge mb-2">LEADERSHIP &amp; GUIDANCE</span>
-                    <h3 class="fw-bold text-dark mb-1">Mr. Ainuddin Shah</h3>
+                    <h4 class="fw-bold text-dark mb-1">Mr. Ainuddin Shah</h4>
                     <p class="text-orange fw-semibold mb-3">Senior Social Worker &bull; Care &amp; Share Society</p>
                     <p class="text-secondary mb-3">
                       "Serving humanity is our highest moral duty. Through Care &amp; Share Society Sardhana, we have resolved to reach the poorest and most vulnerable, ensuring that lack of resources never denies a child an education or a patient life-saving healthcare."

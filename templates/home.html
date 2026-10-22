@@ -3,6 +3,47 @@
 
 {% block title %}Care &amp; Share Society Sardhana - Together We Care, Together We Share{% endblock %}
 
+{% block extra_css %}
+<style>
+  .carousel-item {
+    height: 520px;
+  }
+  .carousel-item img {
+    height: 520px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .carousel-item img.hero-slide-ainuddin {
+    object-position: 85% center !important;
+  }
+  .carousel-item img.hero-slide-ainuddin-2 {
+    object-position: 15% center !important;
+  }
+  @media (max-width: 768px) {
+    .carousel-item {
+      height: 360px;
+    }
+    .carousel-item img {
+      height: 360px;
+    }
+    .carousel-item img.hero-slide-ainuddin {
+      object-position: 85% center !important;
+    }
+    .carousel-item img.hero-slide-ainuddin-2 {
+      object-position: 15% center !important;
+    }
+  }
+  @media (max-width: 575.98px) {
+    .carousel-item img.hero-slide-ainuddin {
+      object-position: 88% center !important;
+    }
+    .carousel-item img.hero-slide-ainuddin-2 {
+      object-position: 12% center !important;
+    }
+  }
+</style>
+{% endblock %}
+
 {% block content %}
 <!-- ================= HERO CAROUSEL ================= -->
 <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -12,14 +53,14 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="5000">
-      <img src="{% static 'images/slide-5.jpg' %}" class="d-block w-100" alt="Moving Step by Step">
+      <img src="{% static 'images/slide-ainuddin.jpg' %}?v=1.0" class="d-block w-100 hero-slide-ainuddin" alt="Moving Step by Step - Mr. Ainuddin Shah">
       <div class="carousel-caption d-none d-md-block">
         <h2 class="text-white text-uppercase">MOVING STEP BY STEP</h2>
         <p class="lead">We strive to share the burden of the less fortunate, through the efforts of those who have more than enough resources</p>
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="5000">
-      <img src="{% static 'images/slide-4.jpg' %}" class="d-block w-100" alt="Moving Step by Step">
+      <img src="{% static 'images/slide-ainuddin-2.jpg' %}?v=1.0" class="d-block w-100 hero-slide-ainuddin-2" alt="Care &amp; Share Society Sardhana - Mr. Ainuddin Shah">
       <div class="carousel-caption d-none d-md-block">
         <h2 class="text-white text-uppercase">MOVING STEP BY STEP</h2>
         <p class="lead">We strive to share the burden of the less fortunate, through the efforts of those who have more than enough resources</p>
@@ -44,7 +85,7 @@
         <h4>Sharing is Absolute Caring</h4>
         <h3 class="text-uppercase">CARE &amp; SHARE SOCIETY, SARDHANA</h3>
         <p class="mb-4">
-          Care &amp; Share Society, Sardhana is a non-profit organization dedicated to serving humanity and supporting the welfare of the community. Under the guidance and leadership of our respected senior social worker, Ainuddine Shah Ji, the society strives to uplift the lives of underprivileged and less fortunate individuals through various healthcare, educational, social welfare, and community development initiatives.
+          Care &amp; Share Society, Sardhana is a non-profit organization dedicated to serving humanity and supporting the welfare of the community. Under the guidance and leadership of our respected senior social worker, Ainuddin Shah Ji, the society strives to uplift the lives of underprivileged and less fortunate individuals through various healthcare, educational, social welfare, and community development initiatives.
         </p>
         <div class="d-flex justify-content-center gap-3 flex-wrap">
           <a href="#programmes" class="btn btn-primary">OUR PROGRAMMES</a>
