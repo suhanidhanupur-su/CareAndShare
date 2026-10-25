@@ -1,0 +1,364 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}People Behind - Care &amp; Share Society Sardhana{% endblock %}
+
+{% block extra_css %}
+<style>
+  .people-banner {
+    background: linear-gradient(105deg, #c4a55c 0%, #ecd79b 40%, #f4e7b8 70%, #d8be7c 100%) !important;
+    border-bottom: 1px solid rgba(196, 165, 92, 0.35) !important;
+    padding: 18px 0 !important;
+    overflow: hidden !important;
+  }
+  .people-banner-portrait-container {
+    display: inline-block !important;
+    position: relative !important;
+    max-width: 140px !important;
+  }
+  .people-banner-portrait {
+    width: 130px !important;
+    height: 155px !important;
+    max-width: 130px !important;
+    max-height: 155px !important;
+    object-fit: cover !important;
+    object-position: center 20% !important;
+    border-radius: 12px !important;
+    border: 3px solid #ffffff !important;
+    box-shadow: 0 4px 16px rgba(41, 37, 34, 0.18) !important;
+    display: block !important;
+    margin-left: auto !important;
+  }
+  .leader-spotlight-box {
+    width: 220px !important;
+    height: 270px !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+    border-radius: 14px !important;
+    border: 4px solid #ffffff !important;
+    box-shadow: 0 10px 25px rgba(41, 37, 34, 0.14) !important;
+    background-color: #ffffff !important;
+  }
+  .leader-spotlight-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 20% !important;
+    display: block !important;
+  }
+  .member-card {
+    border: 1px solid #eae3dc !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(41, 37, 34, 0.05) !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  }
+  .member-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 12px 28px rgba(41, 37, 34, 0.12) !important;
+  }
+  .member-img-wrap {
+    width: 100% !important;
+    height: 220px !important;
+    overflow: hidden !important;
+    background-color: #f7f3ee !important;
+    position: relative !important;
+  }
+  .member-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+    transition: transform 0.3s ease !important;
+  }
+  .member-card:hover .member-img {
+    transform: scale(1.04) !important;
+  }
+  .member-role {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px !important;
+    color: #292522 !important;
+    text-transform: uppercase !important;
+    margin-bottom: 0 !important;
+    min-height: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  @media (max-width: 767.98px) {
+    .people-banner-portrait {
+      width: 110px !important;
+      height: 130px !important;
+      max-width: 110px !important;
+      max-height: 130px !important;
+      margin: 0 auto !important;
+    }
+    .leader-spotlight-box {
+      width: 180px !important;
+      height: 220px !important;
+    }
+    .member-img-wrap {
+      height: 200px !important;
+    }
+  }
+  @media (max-width: 575.98px) {
+    .people-banner-portrait {
+      width: 90px !important;
+      height: 110px !important;
+      max-width: 90px !important;
+      max-height: 110px !important;
+    }
+    .member-img-wrap {
+      height: 220px !important;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- ================= PEOPLE BEHIND HERO BANNER ================= -->
+<div class="container-fluid g-0 people-banner">
+  <div class="container">
+    <div class="row align-items-center g-3 g-md-4">
+      <div class="col-8 col-md-8 col-lg-9 py-2 text-start">
+        <h2 class="about-banner-title mb-2" style="font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 26px; color: #24201d; letter-spacing: 0.5px; line-height: 1.25;">People Behind Care &amp; Share</h2>
+        <p class="about-banner-lead mb-0" style="font-family: 'Open Sans', sans-serif; font-size: 14.5px; line-height: 1.55; color: #3a342f; max-width: 660px;">
+          The dedicated leadership, patrons, trustees, and social workers guiding Care &amp; Share Society, Sardhana under the mentorship of <span class="fw-bold" style="color: #1a1816;">Mr. Ainuddin Shah</span>.
+        </p>
+      </div>
+      <div class="col-4 col-md-4 col-lg-3 text-end py-1">
+        <div class="people-banner-portrait-container">
+          <img src="{% static 'images/ainuddin_shah.jpg' %}" 
+               alt="Mr. Ainuddin Shah - Senior Social Worker" 
+               class="people-banner-portrait img-fluid"
+               width="130"
+               height="155">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MAIN PEOPLE BEHIND CONTENT ================= -->
+<div class="container-fluid py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div class="card about-card rounded-4 p-4 p-md-5">
+          
+          <!-- Page Header -->
+          <div class="row">
+            <div class="col-12">
+              <h3 class="page-head">PEOPLE BEHIND</h3>
+              <h4 class="text-orange fw-bold mb-3">Leadership, Governance &amp; Social Action</h4>
+              <p class="lead fs-6 text-secondary mb-4">
+                Care &amp; Share Society, Sardhana is driven by a passionate collective of social workers, philanthropists, and community leaders who dedicate their time, expertise, and resources to uplift underprivileged families. Our leadership team ensures that every initiative in healthcare, education, and community welfare is carried out with transparency, compassion, and meaningful impact.
+              </p>
+            </div>
+          </div>
+
+          <!-- Featured Leader Card: Mr. Ainuddin Shah -->
+          <div class="row my-4">
+            <div class="col-12">
+              <div class="card border-0 shadow-sm overflow-hidden leader-card" style="background: linear-gradient(135deg, #fbf8f5 0%, #f4ece4 100%); border-radius: 16px; border: 1px solid #eae3dc;">
+                <div class="row g-0 align-items-center">
+                  <div class="col-md-5 col-lg-4 text-center p-4">
+                    <div class="leader-spotlight-box">
+                      <img src="{% static 'images/ainuddin_shah.jpg' %}" 
+                           alt="Mr. Ainuddin Shah" 
+                           class="leader-spotlight-img img-fluid">
+                    </div>
+                    <div class="mt-3">
+                      <h5 class="fw-bold mb-1" style="color: #292522;">Mr. Ainuddin Shah</h5>
+                      <span class="badge px-3 py-2 text-uppercase" style="background-color: #B65E3C; font-size: 11px; letter-spacing: 0.8px;">Senior Social Worker &bull; Chief Patron</span>
+                    </div>
+                  </div>
+                  <div class="col-md-7 col-lg-8 p-4 pe-lg-5">
+                    <span class="leader-badge mb-2">FOUNDATION PATRON &amp; MENTOR</span>
+                    <h3 class="fw-bold mb-2" style="color: #292522; font-family: 'Roboto Slab', serif;">IT IS NOW OR NEVER !</h3>
+                    <p class="fw-bold mb-2 text-orange" style="font-size: 15px;">A Message from Ainuddin Shah Ji</p>
+                    <p class="text-secondary mb-3" style="line-height: 1.7;">
+                      "We strongly believe that every individual deserves an opportunity to live a healthy, dignified, and fulfilling life. We are all bound by our duty to society and to our fellow citizens. We should commit ourselves to helping the less fortunate and the needy by sharing our resources with those who are deprived."
+                    </p>
+                    <p class="text-secondary mb-3" style="line-height: 1.7;">
+                      "This is the right time to come forward and support this noble cause of care and share. Every contribution and helping hand of yours will be fully utilized to uplift communities and bring hope to families in need."
+                    </p>
+                    <div class="d-flex align-items-center gap-2 pt-2 border-top" style="border-color: #e5ded7 !important;">
+                      <i class="fa-solid fa-quote-left text-orange fs-4 me-2"></i>
+                      <p class="fst-italic text-muted small mb-0">
+                        "Serving humanity is our highest moral duty. Lack of resources should never deny a child an education or a patient life-saving healthcare."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Board of Directors & Managing Committee -->
+          <div class="row mt-5 mb-3">
+            <div class="col-12">
+              <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 border-bottom pb-3 mb-4">
+                <div>
+                  <h4 class="fw-bold mb-1" style="color: #292522; font-family: 'Roboto Slab', serif;">
+                    <i class="fa-solid fa-users-gear text-orange me-2"></i>Board of Directors &amp; Managing Committee
+                  </h4>
+                  <p class="text-muted small mb-0">The executive members and trustees overseeing operations, welfare projects, and governance.</p>
+                </div>
+                <span class="badge bg-secondary px-3 py-2" style="font-size: 12px; font-weight: 500;">9 Executive Members</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4-Column Grid for Governing Committee -->
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            
+            <!-- Member 1: Shri. K. Muraleedharan -->
+            <div class="col">
+              <div class="card h-100 member-card">
+                <div class="member-img-wrap">
+                  <img src="{% static 'images/people/k-muraleedharan.jpg' %}" class="member-img" alt="Shri. K. Muraleedharan">
+                </div>
+                <div class="card-body text-center p-3 d-flex flex-column justify-content-between">
+                  <h6 class="card-title text-orange fw-bold mb-1">Shri. K. Muraleedharan</h6>
+                  <p class="member-role">CHAIRMAN</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Member 2: Shri. Geevargese Yohannan -->
+            <div class="col">
+              <div class="card h-100 member-card">
+                <div class="member-img-wrap">
+                  <img src="{% static 'images/people/geevargese-yohannan.jpg' %}" class="member-img" alt="Shri. Geevargese Yohannan">
+                </div>
+                <div class="card-body text-center p-3 d-flex flex-column justify-content-between">
+                  <h6 class="card-title text-orange fw-bold mb-1">Shri. Geevargese Yohannan</h6>
+                  <p class="member-role">VICE-CHAIRMAN</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Member 3: Rev. Fr. Thomas Kurian -->
+            <div class="col">
+              <div class="card h-100 member-card">
+                <div class="member-img-wrap">
+                  <img src="{% static 'images/people/thomas-kurian.jpg' %}" class="member-img" alt="Rev. Fr. Thomas Kurian">
+                </div>
+                <div class="card-body text-center p-3 d-flex flex-column justify-content-between">
+                  <h6 class="card-title text-orange fw-bold mb-1">Rev. Fr. Thomas Kurian</h6>
+                  <p class="member-role">MANAGING DIRECTOR</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Member 4: Dr. Varghese Jacob (Viju) -->
+            <div class="col">
+              <div class="card h-100 member-card">
+                <div class="member-img-wrap">
+                  <img src="{% static 'images/people/viju-jacob.jpg' %}" class="member-img" alt="Dr. Varghese Jacob (Viju)">
+                </div>
+                <div class="card-body text-center p-3 d-flex flex-column justify-content-between">
+                  <h6 class="card-title text-orange fw-bold mb-1">Dr. Varghese Jacob (Viju)</h6>
+                  <p class="member-role">EXECUTIVE DIRECTOR</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Member 5: Shri. Roy M. Mathew -->
+            <div class="col">
+              <div class="card h-100 member-card">
+                <div class="member-img-wrap">
+                  <img src="{% static 'images/people/roy-m-mathew.jpg' %}" class="member-img" alt="Shri. Roy M. Mathew">
+                </div>
+                <div class="card-body text-center p-3 d-flex flex-column justify-content-between">
+                  <h6 class="card-title text-orange fw-bold mb-1">Shri. Roy M. Mathew</h6>
+                  <p class="member-role">MANAGING TRUSTEE</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Member 6: Shri. George Sebastian -->
+            <div class="col">
+              <div class="card h-100 member-card">
+                <div class="member-img-wrap">
+                  <img src="{% static 'images/people/george-sebastian.jpg' %}" class="member-img" alt="Shri. George Sebastian">
+                </div>
+                <div class="card-body text-center p-3 d-flex flex-column justify-content-between">
+                  <h6 class="card-title text-orange fw-bold mb-1">Shri. George Sebastian</h6>
+                  <p class="member-role">DIRECTOR (PROJECTS)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Member 7: Shri. Robert V. Kuriakose -->
+            <div class="col">
+              <div class="card h-100 member-card">
+                <div class="member-img-wrap">
+                  <img src="{% static 'images/people/robert-v-kuriakose.jpg' %}" class="member-img" alt="Shri. Robert V. Kuriakose">
+                </div>
+                <div class="card-body text-center p-3 d-flex flex-column justify-content-between">
+                  <h6 class="card-title text-orange fw-bold mb-1">Shri. Robert V. Kuriakose</h6>
+                  <p class="member-role">DIRECTOR (PUBLIC RELATIONS)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Member 8: Shri. A. Mohanan -->
+            <div class="col">
+              <div class="card h-100 member-card">
+                <div class="member-img-wrap">
+                  <img src="{% static 'images/people/a-mohan.jpg' %}" class="member-img" alt="Shri. A. Mohanan">
+                </div>
+                <div class="card-body text-center p-3 d-flex flex-column justify-content-between">
+                  <h6 class="card-title text-orange fw-bold mb-1">Shri. A. Mohanan</h6>
+                  <p class="member-role">DIRECTOR (FINANCE)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Member 9: Shri. C.P. Salih -->
+            <div class="col">
+              <div class="card h-100 member-card">
+                <div class="member-img-wrap">
+                  <img src="{% static 'images/people/cp-salih.jpg' %}" class="member-img" alt="Shri. C.P. Salih">
+                </div>
+                <div class="card-body text-center p-3 d-flex flex-column justify-content-between">
+                  <h6 class="card-title text-orange fw-bold mb-1">Shri. C.P. Salih</h6>
+                  <p class="member-role">DIRECTOR (OPERATIONS)</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Banner: Grassroots Social Workers & Volunteers -->
+          <div class="row mt-5 pt-3">
+            <div class="col-12">
+              <div class="card bg-white border p-4 rounded-3 shadow-sm" style="border-left: 5px solid #B65E3C !important;">
+                <div class="row align-items-center g-3">
+                  <div class="col-md-8">
+                    <h5 class="fw-bold mb-1" style="color: #292522;">Our Grassroots Volunteers &amp; Community Pillars</h5>
+                    <p class="text-secondary small mb-0">
+                      Beyond our governing board, hundreds of dedicated volunteers, doctors, educators, and social advocates work tirelessly on the ground in Sardhana. Together, we bring food, medical aid, education, and human warmth to every family in need.
+                    </p>
+                  </div>
+                  <div class="col-md-4 text-md-end text-center">
+                    <a href="{% url 'home' %}#contact" class="btn btn-primary px-4 py-2" style="font-size: 13px; font-weight: 600;">
+                      <i class="fa-solid fa-hand-holding-heart me-1"></i> JOIN AS VOLUNTEER
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

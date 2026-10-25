@@ -61,7 +61,7 @@
               <a class="nav-link {% if '/about' in request.path %}active{% endif %}" href="{% url 'about' %}">ABOUT</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}#patron">PEOPLE BEHIND</a>
+              <a class="nav-link {% if '/people' in request.path %}active{% endif %}" href="{% url 'people' %}">PEOPLE BEHIND</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'home' %}#programmes">PROGRAMMES</a>
@@ -73,7 +73,7 @@
               <a class="nav-link" href="{% url 'home' %}#programmes">MEDIA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}#contact">CONTACT US</a>
+              <a class="nav-link {% if '/contact' in request.path %}active{% endif %}" href="{% url 'contact' %}">CONTACT US</a>
             </li>
           </ul>
 
@@ -93,6 +93,18 @@
       </div>
     </div>
   </nav>
+
+  <!-- ================= MESSAGES ALERT CONTAINER ================= -->
+  {% if messages %}
+  <div class="container mt-3">
+    {% for message in messages %}
+      <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags|default:'info' }}{% endif %} alert-dismissible fade show shadow-sm" role="alert">
+        <i class="fa-solid fa-circle-check me-2 text-success"></i> {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
 
   <!-- ================= MAIN CONTENT BLOCK ================= -->
   {% block content %}
@@ -134,9 +146,9 @@
           <ul>
             <li><a href="{% url 'home' %}"><i class="fa-solid fa-angle-right"></i>Home</a></li>
             <li><a href="{% url 'about' %}"><i class="fa-solid fa-angle-right"></i>About Us</a></li>
-            <li><a href="{% url 'home' %}#patron"><i class="fa-solid fa-angle-right"></i>People Behind</a></li>
+            <li><a href="{% url 'people' %}"><i class="fa-solid fa-angle-right"></i>People Behind</a></li>
             <li><a href="{% url 'home' %}#programmes"><i class="fa-solid fa-angle-right"></i>Our Programmes</a></li>
-            <li><a href="#contact"><i class="fa-solid fa-angle-right"></i>Contact Us</a></li>
+            <li><a href="{% url 'contact' %}"><i class="fa-solid fa-angle-right"></i>Contact Us</a></li>
           </ul>
         </div>
 

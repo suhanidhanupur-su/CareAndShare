@@ -1,0 +1,319 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us - Care &amp; Share Society Sardhana{% endblock %}
+
+{% block extra_css %}
+<style>
+  .contact-banner {
+    background: linear-gradient(105deg, #c4a55c 0%, #ecd79b 40%, #f4e7b8 70%, #d8be7c 100%) !important;
+    border-bottom: 1px solid rgba(196, 165, 92, 0.35) !important;
+    padding: 18px 0 !important;
+    overflow: hidden !important;
+  }
+  .contact-banner-portrait-container {
+    display: inline-block !important;
+    position: relative !important;
+    max-width: 140px !important;
+  }
+  .contact-banner-portrait {
+    width: 130px !important;
+    height: 155px !important;
+    max-width: 130px !important;
+    max-height: 155px !important;
+    object-fit: cover !important;
+    object-position: center 20% !important;
+    border-radius: 12px !important;
+    border: 3px solid #ffffff !important;
+    box-shadow: 0 4px 16px rgba(41, 37, 34, 0.18) !important;
+    display: block !important;
+    margin-left: auto !important;
+  }
+  .contact-info-card {
+    border: 1px solid #eae3dc !important;
+    border-radius: 14px !important;
+    background-color: #fcfaf8 !important;
+    padding: 24px 20px !important;
+    height: 100% !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  }
+  .contact-info-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 10px 24px rgba(41, 37, 34, 0.08) !important;
+    background-color: #ffffff !important;
+  }
+  .contact-icon-bubble {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: #f3e9de;
+    color: #B65E3C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 16px;
+    transition: all 0.25s ease;
+  }
+  .contact-info-card:hover .contact-icon-bubble {
+    background-color: #B65E3C;
+    color: #ffffff;
+  }
+  .contact-form-card {
+    border: 1px solid #eae3dc !important;
+    border-radius: 16px !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(41, 37, 34, 0.06) !important;
+  }
+  .form-control:focus, .form-select:focus {
+    border-color: #B65E3C !important;
+    box-shadow: 0 0 0 0.25rem rgba(182, 94, 60, 0.18) !important;
+  }
+  .btn-submit-contact {
+    background-color: #B65E3C !important;
+    border-color: #B65E3C !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    padding: 12px 28px !important;
+    border-radius: 8px !important;
+    transition: all 0.25s ease !important;
+  }
+  .btn-submit-contact:hover {
+    background-color: #9c4c2d !important;
+    border-color: #9c4c2d !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(182, 94, 60, 0.35) !important;
+  }
+  @media (max-width: 767.98px) {
+    .contact-banner-portrait {
+      width: 110px !important;
+      height: 130px !important;
+    }
+  }
+  @media (max-width: 575.98px) {
+    .contact-banner-portrait {
+      width: 90px !important;
+      height: 110px !important;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- ================= CONTACT HERO BANNER ================= -->
+<div class="container-fluid g-0 contact-banner">
+  <div class="container">
+    <div class="row align-items-center g-3 g-md-4">
+      <div class="col-8 col-md-8 col-lg-9 py-2 text-start">
+        <h2 class="about-banner-title mb-2" style="font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 26px; color: #24201d; letter-spacing: 0.5px; line-height: 1.25;">Contact Care &amp; Share Society</h2>
+        <p class="about-banner-lead mb-0" style="font-family: 'Open Sans', sans-serif; font-size: 14.5px; line-height: 1.55; color: #3a342f; max-width: 660px;">
+          Have questions, wish to support our welfare programmes, or seek assistance? We are always here to connect under the guidance of <span class="fw-bold" style="color: #1a1816;">Mr. Ainuddin Shah</span>.
+        </p>
+      </div>
+      <div class="col-4 col-md-4 col-lg-3 text-end py-1">
+        <div class="contact-banner-portrait-container">
+          <img src="{% static 'images/ainuddin_shah.jpg' %}" 
+               alt="Mr. Ainuddin Shah - Senior Social Worker" 
+               class="contact-banner-portrait img-fluid"
+               width="130"
+               height="155">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MAIN CONTACT CONTENT ================= -->
+<div class="container-fluid py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div class="card about-card rounded-4 p-4 p-md-5">
+          
+          <!-- Page Header -->
+          <div class="row">
+            <div class="col-12">
+              <h3 class="page-head">CONTACT US</h3>
+              <h4 class="text-orange fw-bold mb-3">Get in Touch With Care &amp; Share Society, Sardhana</h4>
+              <p class="lead fs-6 text-secondary mb-4">
+                Whether you need assistance through our healthcare initiatives, want to enroll a student for educational aid, or wish to contribute as a volunteer, please contact our team. Together, we can share the burden of the less fortunate.
+              </p>
+            </div>
+          </div>
+
+          <!-- Top Contact Information Cards (3 Columns) -->
+          <div class="row g-4 mb-5">
+            <!-- Card 1: Office Address -->
+            <div class="col-md-4">
+              <div class="contact-info-card text-center d-flex flex-column align-items-center">
+                <div class="contact-icon-bubble">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <h5 class="fw-bold mb-2" style="color: #292522;">Our Society Office</h5>
+                <p class="text-secondary small mb-1">
+                  <strong>Care &amp; Share Society</strong><br>
+                  Sardhana, Meerut District<br>
+                  Uttar Pradesh &bull; 250342, India
+                </p>
+                <small class="text-orange fw-semibold mt-auto pt-2">
+                  <i class="fa-solid fa-user-tie me-1"></i> Under Ainuddin Shah Ji
+                </small>
+              </div>
+            </div>
+
+            <!-- Card 2: Phone & Helpline -->
+            <div class="col-md-4">
+              <div class="contact-info-card text-center d-flex flex-column align-items-center">
+                <div class="contact-icon-bubble">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <h5 class="fw-bold mb-2" style="color: #292522;">Phone &amp; Helpline</h5>
+                <p class="text-secondary small mb-1">
+                  General Desk: <a href="tel:04842377369" class="text-decoration-none text-dark fw-bold">0484 2377369</a><br>
+                  Helpline: <a href="tel:+919876543210" class="text-decoration-none text-dark fw-bold">+91 98765 43210</a>
+                </p>
+                <small class="text-muted mt-auto pt-2">
+                  <i class="fa-regular fa-clock me-1 text-orange"></i> Mon &ndash; Sat: 9 AM &ndash; 6 PM
+                </small>
+              </div>
+            </div>
+
+            <!-- Card 3: Email & Communication -->
+            <div class="col-md-4">
+              <div class="contact-info-card text-center d-flex flex-column align-items-center">
+                <div class="contact-icon-bubble">
+                  <i class="fa-regular fa-envelope"></i>
+                </div>
+                <h5 class="fw-bold mb-2" style="color: #292522;">Email &amp; Support</h5>
+                <p class="text-secondary small mb-1">
+                  Official Inquiries:<br>
+                  <a href="mailto:info@careandshare.in" class="text-orange fw-bold text-decoration-none">info@careandshare.in</a>
+                </p>
+                <small class="text-muted mt-auto pt-2">
+                  <i class="fa-solid fa-reply me-1 text-orange"></i> Replies within 24 hours
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form & Map Section (2 Columns) -->
+          <div class="row g-4 g-lg-5 align-items-stretch">
+            
+            <!-- Column 1: Interactive Contact Form -->
+            <div class="col-lg-7">
+              <div class="contact-form-card p-4 p-md-5 h-100">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <span class="badge px-3 py-2 text-uppercase" style="background-color: #B65E3C; font-size: 11px; letter-spacing: 0.5px;">SEND A MESSAGE</span>
+                  <small class="text-muted">&bull; Direct to our society team</small>
+                </div>
+                <h4 class="fw-bold mb-2" style="color: #292522; font-family: 'Roboto Slab', serif;">How Can We Help You?</h4>
+                <p class="text-secondary small mb-4">Please submit your details and message below. Our administrative coordinators will respond promptly.</p>
+
+                <form method="POST" action="{% url 'contact' %}">
+                  {% csrf_token %}
+                  
+                  <div class="row g-3">
+                    <!-- Full Name -->
+                    <div class="col-md-6">
+                      <label for="name" class="form-label small fw-bold text-dark">Full Name <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="col-md-6">
+                      <label for="email" class="form-label small fw-bold text-dark">Email Address <span class="text-danger">*</span></label>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" required>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="col-md-6">
+                      <label for="phone" class="form-label small fw-bold text-dark">Phone Number</label>
+                      <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your contact number">
+                    </div>
+
+                    <!-- Subject / Inquiry Type -->
+                    <div class="col-md-6">
+                      <label for="subject" class="form-label small fw-bold text-dark">Subject / Purpose</label>
+                      <select class="form-select" id="subject" name="subject">
+                        <option value="General Inquiry" selected>General Inquiry</option>
+                        <option value="Volunteer Registration">Become a Volunteer</option>
+                        <option value="Healthcare / Heart Surgery Support">Healthcare / Medical Support</option>
+                        <option value="Education Aid (Vidhya Amruthu)">Education Aid (Vidhya Amruthu)</option>
+                        <option value="Community Welfare">Community Welfare</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+
+                    <!-- Message Body -->
+                    <div class="col-12">
+                      <label for="message" class="form-label small fw-bold text-dark">Your Message <span class="text-danger">*</span></label>
+                      <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message, request, or inquiry here..." required></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="col-12 pt-2">
+                      <button type="submit" class="btn btn-submit-contact w-100">
+                        <i class="fa-regular fa-paper-plane me-2"></i> SEND MESSAGE
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Column 2: Location Map & Information -->
+            <div class="col-lg-5">
+              <div class="d-flex flex-column h-100 gap-4">
+                
+                <!-- Google Maps Embed -->
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden" style="border: 1px solid #eae3dc !important;">
+                  <div class="p-3 bg-light border-bottom d-flex align-items-center justify-content-between">
+                    <span class="fw-bold small" style="color: #292522;">
+                      <i class="fa-solid fa-map-location-dot text-orange me-2"></i>Location Map (Sardhana, Meerut)
+                    </span>
+                    <small class="text-muted">Uttar Pradesh</small>
+                  </div>
+                  <div class="ratio ratio-4x3" style="min-height: 250px;">
+                    <iframe src="https://maps.google.com/maps?q=Sardhana,+Meerut,+Uttar+Pradesh,+India&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                  </div>
+                </div>
+
+                <!-- Guidance & Patron Card -->
+                <div class="card border-0 p-4 rounded-4 shadow-sm" style="background-color: #fbf8f5; border: 1px solid #eae3dc !important;">
+                  <div class="d-flex align-items-center gap-3 mb-3">
+                    <img src="{% static 'images/ainuddin_shah.jpg' %}" 
+                         alt="Mr. Ainuddin Shah" 
+                         class="rounded-circle shadow-sm" 
+                         style="width: 58px; height: 58px; object-fit: cover; object-position: center 20%; border: 2px solid #B65E3C;">
+                    <div>
+                      <h6 class="fw-bold mb-0" style="color: #292522;">Mr. Ainuddin Shah</h6>
+                      <small class="text-orange fw-semibold" style="font-size: 11.5px;">Senior Social Worker &bull; Care &amp; Share Society</small>
+                    </div>
+                  </div>
+                  <p class="text-secondary small mb-2 fst-italic">
+                    "Every contribution, every question, and every helping hand brings hope to families in need. Reach out to us anytime."
+                  </p>
+                  <hr class="my-2" style="border-color: #eae3dc;">
+                  <div class="small text-muted d-flex justify-content-between align-items-center">
+                    <span><i class="fa-solid fa-shield-heart text-orange me-1"></i> Non-Profit Organisation</span>
+                    <span class="fw-bold text-dark">Sardhana, India</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
