@@ -41,6 +41,25 @@
       object-position: 12% center !important;
     }
   }
+  #programmes,
+  .sec-program {
+    scroll-margin-top: 130px !important;
+    padding-top: 100px !important;
+  }
+  @media (max-width: 991.98px) {
+    #programmes,
+    .sec-program {
+      scroll-margin-top: 110px !important;
+      padding-top: 85px !important;
+    }
+  }
+  @media (max-width: 768px) {
+    #programmes,
+    .sec-program {
+      scroll-margin-top: 95px !important;
+      padding-top: 75px !important;
+    }
+  }
 </style>
 {% endblock %}
 
@@ -149,12 +168,11 @@
       <!-- Card 1: Hridayasparsham -->
       <div class="col-lg-4 col-md-6">
         <div class="card h-100">
-          <img src="{% static 'images/hridayasparsham-1.jpg' %}" class="card-img-top" alt="Hridayasparsham">
+          <img src="{% static 'images/ainuddin_shah.jpg' %}" class="card-img-top" alt="Hridayasparsham" style="object-position: center 20%;">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Hridayasparsham (Pro Heart)</h5>
             <p class="card-text flex-grow-1">Hridayasparsham is the first flagship initiative of Care and Share Foundation. The programme focuses on paediatric cardiology and life-saving heart surgeries for children.</p>
-            <div class="d-flex align-items-center gap-2 mt-3 pt-2 border-top">
-              <img src="{% static 'images/ainuddin_shah.jpg' %}" alt="Mr. Ainuddin Shah" class="rounded-circle" style="width: 32px; height: 32px; object-fit: cover; object-position: center 20%; border: 1.5px solid #B65E3C;">
+            <div class="mt-3 pt-2 border-top">
               <small class="text-muted" style="font-size: 11px;">Leadership: <strong>Ainuddin Shah Ji</strong></small>
             </div>
             <p class="card-text text-end mt-2 mb-0">
@@ -167,12 +185,11 @@
       <!-- Card 2: Vazhikatti -->
       <div class="col-lg-4 col-md-6">
         <div class="card h-100">
-          <img src="{% static 'images/vazhikatti-1.jpg' %}" class="card-img-top" alt="Vazhikatti">
+          <img src="{% static 'images/ainuddin_shah.jpg' %}" class="card-img-top" alt="Vazhikatti" style="object-position: center 20%;">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Vazhikatti (Guide)</h5>
             <p class="card-text flex-grow-1">Care and Share Foundation announced an intensive awareness campaign against drugs and substance abuse called Vazhikatti to guide the youth toward a better tomorrow.</p>
-            <div class="d-flex align-items-center gap-2 mt-3 pt-2 border-top">
-              <img src="{% static 'images/ainuddin_shah.jpg' %}" alt="Mr. Ainuddin Shah" class="rounded-circle" style="width: 32px; height: 32px; object-fit: cover; object-position: center 20%; border: 1.5px solid #B65E3C;">
+            <div class="mt-3 pt-2 border-top">
               <small class="text-muted" style="font-size: 11px;">Leadership: <strong>Ainuddin Shah Ji</strong></small>
             </div>
             <p class="card-text text-end mt-2 mb-0">
@@ -185,47 +202,16 @@
       <!-- Card 3: Vidhya Amruthu -->
       <div class="col-lg-4 col-md-6">
         <div class="card h-100">
-          <img src="{% static 'images/vidhyamrutham-1.jpg' %}" class="card-img-top" alt="Vidhya Amruthu">
+          <img src="{% static 'images/ainuddin_shah.jpg' %}" class="card-img-top" alt="Vidhya Amruthu" style="object-position: center 20%;">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Vidhya Amruthu</h5>
             <p class="card-text flex-grow-1">Care and Share Foundation started its third venture "Vidhya Amruthu" to provide quality educational aid, learning materials, and scholarships to needy students.</p>
-            <div class="d-flex align-items-center gap-2 mt-3 pt-2 border-top">
-              <img src="{% static 'images/ainuddin_shah.jpg' %}" alt="Mr. Ainuddin Shah" class="rounded-circle" style="width: 32px; height: 32px; object-fit: cover; object-position: center 20%; border: 1.5px solid #B65E3C;">
+            <div class="mt-3 pt-2 border-top">
               <small class="text-muted" style="font-size: 11px;">Leadership: <strong>Ainuddin Shah Ji</strong></small>
             </div>
             <p class="card-text text-end mt-2 mb-0">
               <a href="{% url 'about' %}" class="read-more">Read More <i class="fa-solid fa-angles-right"></i></a>
             </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Programme Leadership & Welfare Action Spotlight -->
-    <div class="row mt-4 pt-2">
-      <div class="col-12">
-        <div class="card border-0 shadow-sm rounded-4 overflow-hidden" style="background-color: #fbf8f5; border-left: 5px solid #B65E3C !important;">
-          <div class="row g-0 align-items-center">
-            <div class="col-md-3 text-center p-3 p-md-4">
-              <div class="d-inline-block rounded-3 overflow-hidden shadow-sm" style="width: 155px; height: 190px; border: 3px solid #ffffff; background-color: #ffffff;">
-                <img src="{% static 'images/ainuddin_shah.jpg' %}" 
-                     alt="Mr. Ainuddin Shah - Programme Leadership" 
-                     class="img-fluid w-100 h-100" 
-                     style="object-fit: cover; object-position: center 20%; display: block;">
-              </div>
-            </div>
-            <div class="col-md-9 p-4 pe-md-5">
-              <span class="badge text-uppercase mb-2" style="background-color: #B65E3C; font-size: 11px; letter-spacing: 0.5px;">PROGRAMME MENTORSHIP &amp; FIELD INITIATIVES</span>
-              <h4 class="fw-bold mb-2" style="color: #292522;">Direct Guidance &amp; Compassionate Action</h4>
-              <p class="text-secondary mb-3" style="font-size: 14px; line-height: 1.6;">
-                Every initiative of Care &amp; Share Society Sardhana is supervised under the dedicated mentorship of <strong>Mr. Ainuddin Shah (Senior Social Worker)</strong>. From free medical consultations and child cardiac screening drives to youth de-addiction counselling and educational scholarship distributions, our field teams work directly with vulnerable families to ensure prompt, transparent, and direct assistance.
-              </p>
-              <div class="d-flex flex-wrap gap-2">
-                <span class="badge bg-white text-dark border py-2 px-3"><i class="fa-solid fa-heart-pulse text-danger me-1"></i> Paediatric Heart Care</span>
-                <span class="badge bg-white text-dark border py-2 px-3"><i class="fa-solid fa-shield-halved text-primary me-1"></i> Youth Guidance &amp; Awareness</span>
-                <span class="badge bg-white text-dark border py-2 px-3"><i class="fa-solid fa-graduation-cap text-success me-1"></i> Student Education Aid</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>

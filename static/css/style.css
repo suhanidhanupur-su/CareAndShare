@@ -412,8 +412,9 @@ html {
 /* Section Programmes / Initiatives */
 .sec-program {
   background-color: #f0e2d3;
-  padding-top: 75px;
+  padding-top: 100px;
   padding-bottom: 75px;
+  scroll-margin-top: 130px;
 }
 .sec-program h2 {
   font-size: 32px;
@@ -435,6 +436,7 @@ html {
 .sec-program .card-img-top {
   height: 220px;
   object-fit: cover;
+  object-position: center 20%;
 }
 .sec-program .card-title {
   color: #be6e4e;
