@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- Custom Project Stylesheet -->
-  <link href="{% static 'css/style.css' %}?v=3.6" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}?v=3.7" rel="stylesheet">
   {% block extra_css %}{% endblock %}
 </head>
 <body>
@@ -67,7 +67,7 @@
               <a class="nav-link" href="{% url 'home' %}#programmes">PROGRAMMES</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}#programmes">GALLERY</a>
+              <a class="nav-link {% if '/gallery' in request.path %}active{% endif %}" href="{% url 'gallery' %}">GALLERY</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'home' %}#programmes">MEDIA</a>
@@ -148,6 +148,7 @@
             <li><a href="{% url 'about' %}"><i class="fa-solid fa-angle-right"></i>About Us</a></li>
             <li><a href="{% url 'people' %}"><i class="fa-solid fa-angle-right"></i>People Behind</a></li>
             <li><a href="{% url 'home' %}#programmes"><i class="fa-solid fa-angle-right"></i>Our Programmes</a></li>
+            <li><a href="{% url 'gallery' %}"><i class="fa-solid fa-angle-right"></i>Gallery</a></li>
             <li><a href="{% url 'contact' %}"><i class="fa-solid fa-angle-right"></i>Contact Us</a></li>
           </ul>
         </div>

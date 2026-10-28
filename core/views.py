@@ -11,6 +11,9 @@ def about(request):
 def people(request):
     return render(request, 'people.html')
 
+def gallery(request):
+    return render(request, 'gallery.html')
+
 def contact(request):
     if request.method == 'POST':
         name = request.POST.get('name', '').strip()
