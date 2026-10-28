@@ -64,7 +64,7 @@
               <a class="nav-link {% if '/people' in request.path %}active{% endif %}" href="{% url 'people' %}">PEOPLE BEHIND</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}#programmes">PROGRAMMES</a>
+              <a class="nav-link {% if '/programmes' in request.path or '/initiatives' in request.path %}active{% endif %}" href="{% url 'programmes' %}">PROGRAMMES</a>
             </li>
             <li class="nav-item">
               <a class="nav-link {% if '/gallery' in request.path %}active{% endif %}" href="{% url 'gallery' %}">GALLERY</a>
@@ -147,7 +147,7 @@
             <li><a href="{% url 'home' %}"><i class="fa-solid fa-angle-right"></i>Home</a></li>
             <li><a href="{% url 'about' %}"><i class="fa-solid fa-angle-right"></i>About Us</a></li>
             <li><a href="{% url 'people' %}"><i class="fa-solid fa-angle-right"></i>People Behind</a></li>
-            <li><a href="{% url 'home' %}#programmes"><i class="fa-solid fa-angle-right"></i>Our Programmes</a></li>
+            <li><a href="{% url 'programmes' %}"><i class="fa-solid fa-angle-right"></i>Our Programmes</a></li>
             <li><a href="{% url 'gallery' %}"><i class="fa-solid fa-angle-right"></i>Gallery</a></li>
             <li><a href="{% url 'media' %}"><i class="fa-solid fa-angle-right"></i>Media &amp; News</a></li>
             <li><a href="{% url 'contact' %}"><i class="fa-solid fa-angle-right"></i>Contact Us</a></li>

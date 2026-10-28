@@ -12,6 +12,9 @@ def about(request):
 def people(request):
     return render(request, 'people.html')
 
+def programmes(request):
+    return render(request, 'programmes.html')
+
 def gallery(request):
     gallery_images = GalleryImage.objects.filter(is_active=True).order_by('order', '-created_at')
     return render(request, 'gallery.html', {'gallery_images': gallery_images})

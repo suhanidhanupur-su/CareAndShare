@@ -1,0 +1,621 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Our Programmes &amp; Initiatives | Care &amp; Share Society Sardhana{% endblock %}
+
+{% block extra_css %}
+<style>
+  .programmes-banner {
+    background: linear-gradient(105deg, #c4a55c 0%, #ecd79b 40%, #f4e7b8 70%, #d8be7c 100%) !important;
+    border-bottom: 1px solid rgba(196, 165, 92, 0.35) !important;
+    padding: 18px 0 !important;
+    overflow: hidden !important;
+  }
+  .programmes-banner-portrait-container {
+    display: inline-block !important;
+    position: relative !important;
+    max-width: 140px !important;
+  }
+  .programmes-banner-portrait {
+    width: 130px !important;
+    height: 155px !important;
+    max-width: 130px !important;
+    max-height: 155px !important;
+    object-fit: cover !important;
+    object-position: center 20% !important;
+    border-radius: 12px !important;
+    border: 3px solid #ffffff !important;
+    box-shadow: 0 4px 16px rgba(41, 37, 34, 0.18) !important;
+    display: block !important;
+    margin-left: auto !important;
+  }
+  @media (max-width: 767.98px) {
+    .programmes-banner-portrait {
+      width: 110px !important;
+      height: 130px !important;
+      max-width: 110px !important;
+      max-height: 130px !important;
+      margin: 0 auto !important;
+    }
+  }
+  @media (max-width: 575.98px) {
+    .programmes-banner-portrait {
+      width: 90px !important;
+      height: 110px !important;
+      max-width: 90px !important;
+      max-height: 110px !important;
+    }
+  }
+
+  /* Programme Card Styling */
+  .program-detail-card {
+    border: 1px solid #ebd9c9 !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 18px rgba(41, 37, 34, 0.06) !important;
+    transition: transform 0.28s ease, box-shadow 0.28s ease !important;
+    scroll-margin-top: 100px;
+  }
+  .program-detail-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 28px rgba(41, 37, 34, 0.12) !important;
+  }
+  .program-img-wrap {
+    width: 100% !important;
+    height: 220px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    background-color: #f7f3ee !important;
+  }
+  .program-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    transition: transform 0.35s ease !important;
+  }
+  .program-detail-card:hover .program-img {
+    transform: scale(1.04) !important;
+  }
+  .program-badge-tag {
+    position: absolute !important;
+    top: 12px !important;
+    left: 12px !important;
+    background-color: rgba(182, 94, 60, 0.94) !important;
+    color: #ffffff !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.6px !important;
+    padding: 4px 10px !important;
+    border-radius: 6px !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  /* Filter buttons */
+  .prog-filter-btn {
+    border: 1px solid #ebd9c9 !important;
+    background-color: #ffffff !important;
+    color: #4a423d !important;
+    padding: 7px 18px !important;
+    border-radius: 30px !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+  }
+  .prog-filter-btn:hover {
+    background-color: #f3e9de !important;
+    color: #B65E3C !important;
+    border-color: #B65E3C !important;
+  }
+  .prog-filter-btn.active {
+    background-color: #B65E3C !important;
+    color: #ffffff !important;
+    border-color: #B65E3C !important;
+    box-shadow: 0 3px 10px rgba(182, 94, 60, 0.25) !important;
+  }
+
+  /* Highlight list */
+  .prog-highlights {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .prog-highlights li {
+    font-size: 13px !important;
+    color: #4a423d !important;
+    margin-bottom: 6px !important;
+    display: flex !important;
+    align-items: flex-start !important;
+  }
+  .prog-highlights li i {
+    color: #B65E3C !important;
+    margin-right: 8px !important;
+    margin-top: 3px !important;
+    font-size: 12px !important;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- ================= PROGRAMMES HERO BANNER ================= -->
+<div class="container-fluid g-0 programmes-banner">
+  <div class="container">
+    <div class="row align-items-center g-3 g-md-4">
+      <div class="col-8 col-md-8 col-lg-9 py-2 text-start">
+        <h2 class="about-banner-title mb-2" style="font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 26px; color: #24201d; letter-spacing: 0.5px; line-height: 1.25;">
+          Our Programmes &amp; Initiatives
+        </h2>
+        <p class="about-banner-lead mb-0" style="font-family: 'Open Sans', sans-serif; font-size: 14.5px; line-height: 1.55; color: #3a342f; max-width: 660px;">
+          Dedicated healthcare, educational aid, youth guidance, and grassroots community welfare initiatives guided by Senior Social Worker <span class="fw-bold" style="color: #1a1816;">Mr. Ainuddin Shah Ji</span>.
+        </p>
+      </div>
+      <div class="col-4 col-md-4 col-lg-3 text-end py-1">
+        <div class="programmes-banner-portrait-container">
+          <img src="{% static 'images/ainuddin_shah.jpg' %}" 
+               alt="Mr. Ainuddin Shah - Senior Social Worker" 
+               class="programmes-banner-portrait img-fluid"
+               width="130"
+               height="155">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MAIN PROGRAMMES CONTENT ================= -->
+<div class="container-fluid py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div class="card about-card rounded-4 p-4 p-md-5">
+
+          <!-- Section Head -->
+          <div class="row">
+            <div class="col-12">
+              <h3 class="page-head">HUMANITARIAN INITIATIVES</h3>
+              <h4 class="text-orange fw-bold mb-3">Serving the Needy &bull; Care &amp; Share Society Sardhana</h4>
+              <p class="lead fs-6 text-secondary mb-4">
+                Under the mentorship of Senior Social Worker <strong>Mr. Ainuddin Shah Ji</strong>, Care &amp; Share Society runs impactful charitable programmes focused on pediatric healthcare, academic aid, youth direction, and direct relief for the underprivileged.
+              </p>
+            </div>
+          </div>
+
+          <!-- Leadership Philosophy Spotlight Banner -->
+          <div class="row mb-5">
+            <div class="col-12">
+              <div class="card border-0 rounded-4 p-4 p-md-4" style="background: linear-gradient(135deg, #fbf7f2 0%, #f4ede3 100%); border-left: 5px solid #B65E3C !important;">
+                <div class="row align-items-center g-4">
+                  <div class="col-md-3 col-lg-2 text-center">
+                    <img src="{% static 'images/ainuddin_shah.jpg' %}" 
+                         alt="Mr. Ainuddin Shah Ji" 
+                         class="rounded-3 shadow-sm border border-2 border-white"
+                         style="width: 105px; height: 125px; object-fit: cover; object-position: center 20%;">
+                    <p class="mb-0 mt-2 small fw-bold text-dark">Ainuddin Shah Ji</p>
+                    <small class="text-muted" style="font-size: 11px;">Chief Patron</small>
+                  </div>
+                  <div class="col-md-9 col-lg-10">
+                    <span class="badge px-3 py-1 mb-2 text-uppercase" style="background-color: #f3e9de; color: #B65E3C; font-size: 11px; font-weight: 700;">
+                      <i class="fa-solid fa-quote-left me-1"></i> Patron's Creed
+                    </span>
+                    <blockquote class="fst-italic text-secondary mb-2" style="font-size: 15px; line-height: 1.65;">
+                      "We strongly believe that every individual deserves an opportunity to live a healthy, dignified, and fulfilling life. We are all bound by our duty to society and to our fellow citizens. We should commit ourselves to helping the less fortunate and the needy by sharing our resources with those who are deprived."
+                    </blockquote>
+                    <p class="small text-muted mb-0 fw-semibold">
+                      &mdash; Mr. Ainuddin Shah Ji, Senior Social Worker &bull; Care &amp; Share Society Sardhana
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category Filter Tabs -->
+          <div class="row mb-4">
+            <div class="col-12">
+              <div class="d-flex flex-wrap gap-2 align-items-center">
+                <span class="small fw-bold text-muted me-2"><i class="fa-solid fa-filter text-orange me-1"></i> Filter By Sector:</span>
+                <button type="button" class="prog-filter-btn active" data-filter="all">All Programmes (8)</button>
+                <button type="button" class="prog-filter-btn" data-filter="healthcare">Healthcare &amp; Surgeries</button>
+                <button type="button" class="prog-filter-btn" data-filter="education">Education &amp; Student Aid</button>
+                <button type="button" class="prog-filter-btn" data-filter="youth">Youth Guidance &amp; Awareness</button>
+                <button type="button" class="prog-filter-btn" data-filter="community">Community Welfare &amp; Relief</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Programmes Cards Grid -->
+          <div class="row g-4" id="programmesGrid">
+
+            <!-- Card 1: Hridayasparsham -->
+            <div class="col-lg-6 program-item" data-category="healthcare">
+              <div class="card program-detail-card h-100" id="hridayasparsham">
+                <div class="program-img-wrap">
+                  <img src="{% static 'images/ainuddin_shah.jpg' %}" 
+                       class="program-img" 
+                       alt="Hridayasparsham Initiative - Ainuddin Shah Ji" 
+                       style="object-position: center 20%;">
+                  <span class="program-badge-tag"><i class="fa-solid fa-heart-pulse me-1"></i> Flagship Healthcare</span>
+                </div>
+                <div class="card-body p-4 d-flex flex-column">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge px-2 py-1" style="background-color: #f3e9de; color: #B65E3C; font-size: 11px;">PAEDIATRIC CARDIOLOGY</span>
+                    <small class="text-muted"><i class="fa-solid fa-location-dot text-orange me-1"></i> Sardhana &amp; Beyond</small>
+                  </div>
+                  <h4 class="card-title fw-bold mb-2" style="color: #292522; font-family: 'Roboto Slab', serif; font-size: 20px;">
+                    Hridayasparsham (Pro Heart)
+                  </h4>
+                  <p class="card-text text-secondary mb-3" style="font-size: 14px; line-height: 1.65;">
+                    Hridayasparsham is the first flagship initiative of Care and Share Society. Guided by Senior Social Worker <strong>Ainuddin Shah Ji</strong>, this programme focuses on paediatric cardiology, facilitating life-saving heart surgeries and essential medical treatments for children from economically disadvantaged families.
+                  </p>
+                  <ul class="prog-highlights flex-grow-1">
+                    <li><i class="fa-solid fa-circle-check"></i> Life-saving heart surgery support for underprivileged infants and children</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Partnering with reputed cardiac healthcare institutions</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Post-operative care and rehabilitation monitoring for families</li>
+                  </ul>
+                  <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                    <small class="text-muted" style="font-size: 11.5px;">Guidance: <strong>Ainuddin Shah Ji</strong></small>
+                    <a href="{% url 'contact' %}" class="btn btn-sm btn-primary px-3 py-1" style="font-size: 12.5px;">
+                      Inquire / Support <i class="fa-solid fa-angle-right ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Vazhikatti -->
+            <div class="col-lg-6 program-item" data-category="youth">
+              <div class="card program-detail-card h-100" id="vazhikatti">
+                <div class="program-img-wrap">
+                  <img src="{% static 'images/slide-ainuddin-2.jpg' %}" 
+                       class="program-img" 
+                       alt="Vazhikatti Youth Guidance - Ainuddin Shah Ji" 
+                       style="object-position: 18% center;">
+                  <span class="program-badge-tag"><i class="fa-solid fa-compass me-1"></i> Youth Guidance</span>
+                </div>
+                <div class="card-body p-4 d-flex flex-column">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge px-2 py-1" style="background-color: #f3e9de; color: #B65E3C; font-size: 11px;">SOCIAL AWARENESS</span>
+                    <small class="text-muted"><i class="fa-solid fa-location-dot text-orange me-1"></i> Sardhana Region</small>
+                  </div>
+                  <h4 class="card-title fw-bold mb-2" style="color: #292522; font-family: 'Roboto Slab', serif; font-size: 20px;">
+                    Vazhikatti (Guide &bull; Anti-Drug Campaign)
+                  </h4>
+                  <p class="card-text text-secondary mb-3" style="font-size: 14px; line-height: 1.65;">
+                    Vazhikatti is an intensive social awareness campaign and mentorship movement against substance abuse and social vices. Initiated to protect the youth, this campaign provides positive counseling, educational direction, and community solidarity under Ainuddin Shah Ji's guidance.
+                  </p>
+                  <ul class="prog-highlights flex-grow-1">
+                    <li><i class="fa-solid fa-circle-check"></i> Youth seminars and educational workshops in local schools and neighborhoods</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Community counseling and rehabilitation guidance for vulnerable youth</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Mobilizing young volunteers for constructive social welfare projects</li>
+                  </ul>
+                  <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                    <small class="text-muted" style="font-size: 11.5px;">Guidance: <strong>Ainuddin Shah Ji</strong></small>
+                    <a href="{% url 'contact' %}" class="btn btn-sm btn-primary px-3 py-1" style="font-size: 12.5px;">
+                      Join Campaign <i class="fa-solid fa-angle-right ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Vidhya Amruthu -->
+            <div class="col-lg-6 program-item" data-category="education">
+              <div class="card program-detail-card h-100" id="vidhya-amruthu">
+                <div class="program-img-wrap">
+                  <img src="{% static 'images/slide-ainuddin.jpg' %}" 
+                       class="program-img" 
+                       alt="Vidhya Amruthu Education Aid - Ainuddin Shah Ji" 
+                       style="object-position: 85% center;">
+                  <span class="program-badge-tag"><i class="fa-solid fa-graduation-cap me-1"></i> Educational Aid</span>
+                </div>
+                <div class="card-body p-4 d-flex flex-column">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge px-2 py-1" style="background-color: #f3e9de; color: #B65E3C; font-size: 11px;">STUDENT WELFARE</span>
+                    <small class="text-muted"><i class="fa-solid fa-location-dot text-orange me-1"></i> Sardhana Schools</small>
+                  </div>
+                  <h4 class="card-title fw-bold mb-2" style="color: #292522; font-family: 'Roboto Slab', serif; font-size: 20px;">
+                    Vidhya Amruthu (Educational Aid &amp; Kits)
+                  </h4>
+                  <p class="card-text text-secondary mb-3" style="font-size: 14px; line-height: 1.65;">
+                    Vidhya Amruthu is the society's core educational venture dedicated to the belief that lack of money must never deprive a deserving child of quality schooling. The programme distributes study kits, textbooks, uniforms, and financial assistance to underprivileged students.
+                  </p>
+                  <ul class="prog-highlights flex-grow-1">
+                    <li><i class="fa-solid fa-circle-check"></i> Distribution of complete academic study kits, notebooks, and learning supplies</li>
+                    <li><i class="fa-solid fa-circle-check"></i> School fees and examination support for economically disadvantaged students</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Merit encouragement and scholarship drives across rural Sardhana</li>
+                  </ul>
+                  <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                    <small class="text-muted" style="font-size: 11.5px;">Guidance: <strong>Ainuddin Shah Ji</strong></small>
+                    <a href="{% url 'contact' %}" class="btn btn-sm btn-primary px-3 py-1" style="font-size: 12.5px;">
+                      Sponsor A Child <i class="fa-solid fa-angle-right ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: Kathod Kathoram -->
+            <div class="col-lg-6 program-item" data-category="healthcare">
+              <div class="card program-detail-card h-100" id="kathod-kathoram">
+                <div class="program-img-wrap">
+                  <img src="{% static 'images/ainuddin_shah.jpg' %}" 
+                       class="program-img" 
+                       alt="Kathod Kathoram Hearing Care - Ainuddin Shah Ji" 
+                       style="object-position: center 20%;">
+                  <span class="program-badge-tag"><i class="fa-solid fa-ear-listen me-1"></i> Hearing Care</span>
+                </div>
+                <div class="card-body p-4 d-flex flex-column">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge px-2 py-1" style="background-color: #f3e9de; color: #B65E3C; font-size: 11px;">SPECIALIZED HEALTHCARE</span>
+                    <small class="text-muted"><i class="fa-solid fa-location-dot text-orange me-1"></i> Medical Outreach</small>
+                  </div>
+                  <h4 class="card-title fw-bold mb-2" style="color: #292522; font-family: 'Roboto Slab', serif; font-size: 20px;">
+                    Kathod Kathoram (Hearing Care &amp; Speech Support)
+                  </h4>
+                  <p class="card-text text-secondary mb-3" style="font-size: 14px; line-height: 1.65;">
+                    Kathod Kathoram is a dedicated humanitarian medical initiative striving to restore hope and communication for individuals affected by hearing impairment, providing screening camps and assistance for speech therapy and specialized care.
+                  </p>
+                  <ul class="prog-highlights flex-grow-1">
+                    <li><i class="fa-solid fa-circle-check"></i> Free audiometric screenings and early hearing loss identification</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Facilitating medical guidance for corrective procedures and devices</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Support for children needing specialized speech therapy</li>
+                  </ul>
+                  <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                    <small class="text-muted" style="font-size: 11.5px;">Guidance: <strong>Ainuddin Shah Ji</strong></small>
+                    <a href="{% url 'contact' %}" class="btn btn-sm btn-primary px-3 py-1" style="font-size: 12.5px;">
+                      Inquire Details <i class="fa-solid fa-angle-right ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5: Valsalyam -->
+            <div class="col-lg-6 program-item" data-category="healthcare">
+              <div class="card program-detail-card h-100" id="valsalyam">
+                <div class="program-img-wrap">
+                  <img src="{% static 'images/slide-ainuddin.jpg' %}" 
+                       class="program-img" 
+                       alt="Valsalyam Child Healthcare - Ainuddin Shah Ji" 
+                       style="object-position: 80% center%;">
+                  <span class="program-badge-tag"><i class="fa-solid fa-children me-1"></i> Child Health</span>
+                </div>
+                <div class="card-body p-4 d-flex flex-column">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge px-2 py-1" style="background-color: #f3e9de; color: #B65E3C; font-size: 11px;">PAEDIATRIC SURGERY</span>
+                    <small class="text-muted"><i class="fa-solid fa-location-dot text-orange me-1"></i> Healthcare Desk</small>
+                  </div>
+                  <h4 class="card-title fw-bold mb-2" style="color: #292522; font-family: 'Roboto Slab', serif; font-size: 20px;">
+                    Valsalyam (Paediatric Surgical Care)
+                  </h4>
+                  <p class="card-text text-secondary mb-3" style="font-size: 14px; line-height: 1.65;">
+                    Valsalyam is a compassionate child healthcare programme providing medical support, pediatric surgical assistance, and rehabilitative care for underprivileged children under the age of 14 facing complex health challenges.
+                  </p>
+                  <ul class="prog-highlights flex-grow-1">
+                    <li><i class="fa-solid fa-circle-check"></i> Facilitating access to advanced pediatric surgeries and treatments</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Complete support for destitute families during hospitalization</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Pre-operative nutritional counseling and medical assistance</li>
+                  </ul>
+                  <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                    <small class="text-muted" style="font-size: 11.5px;">Guidance: <strong>Ainuddin Shah Ji</strong></small>
+                    <a href="{% url 'contact' %}" class="btn btn-sm btn-primary px-3 py-1" style="font-size: 12.5px;">
+                      Connect With Team <i class="fa-solid fa-angle-right ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6: Sukrutham -->
+            <div class="col-lg-6 program-item" data-category="healthcare">
+              <div class="card program-detail-card h-100" id="sukrutham">
+                <div class="program-img-wrap">
+                  <img src="{% static 'images/ainuddin_shah.jpg' %}" 
+                       class="program-img" 
+                       alt="Sukrutham Patient Relief - Ainuddin Shah Ji" 
+                       style="object-position: center 20%;">
+                  <span class="program-badge-tag"><i class="fa-solid fa-hand-holding-medical me-1"></i> Critical Medical Relief</span>
+                </div>
+                <div class="card-body p-4 d-flex flex-column">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge px-2 py-1" style="background-color: #f3e9de; color: #B65E3C; font-size: 11px;">CRITICAL AID</span>
+                    <small class="text-muted"><i class="fa-solid fa-location-dot text-orange me-1"></i> Patient Assistance</small>
+                  </div>
+                  <h4 class="card-title fw-bold mb-2" style="color: #292522; font-family: 'Roboto Slab', serif; font-size: 20px;">
+                    Sukrutham (Critical Medical Relief)
+                  </h4>
+                  <p class="card-text text-secondary mb-3" style="font-size: 14px; line-height: 1.65;">
+                    Sukrutham provides humanitarian solidarity and medical aid to vulnerable individuals facing catastrophic health crises such as kidney failure, prolonged intensive care, and acute emergencies where medical costs exceed household means.
+                  </p>
+                  <ul class="prog-highlights flex-grow-1">
+                    <li><i class="fa-solid fa-circle-check"></i> Financial guidance and aid for prolonged medical treatments and dialysis</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Medical camp outreach and compassionate family counseling</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Connecting patients with essential pharmaceutical aid and diagnostic centers</li>
+                  </ul>
+                  <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                    <small class="text-muted" style="font-size: 11.5px;">Guidance: <strong>Ainuddin Shah Ji</strong></small>
+                    <a href="{% url 'contact' %}" class="btn btn-sm btn-primary px-3 py-1" style="font-size: 12.5px;">
+                      Apply for Aid <i class="fa-solid fa-angle-right ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 7: Kaazhcha -->
+            <div class="col-lg-6 program-item" data-category="healthcare">
+              <div class="card program-detail-card h-100" id="kaazhcha">
+                <div class="program-img-wrap">
+                  <img src="{% static 'images/slide-ainuddin-2.jpg' %}" 
+                       class="program-img" 
+                       alt="Kaazhcha Eye Care - Ainuddin Shah Ji" 
+                       style="object-position: 15% center;">
+                  <span class="program-badge-tag"><i class="fa-solid fa-eye me-1"></i> Vision For All</span>
+                </div>
+                <div class="card-body p-4 d-flex flex-column">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge px-2 py-1" style="background-color: #f3e9de; color: #B65E3C; font-size: 11px;">COMMUNITY EYE CARE</span>
+                    <small class="text-muted"><i class="fa-solid fa-location-dot text-orange me-1"></i> Rural Camps</small>
+                  </div>
+                  <h4 class="card-title fw-bold mb-2" style="color: #292522; font-family: 'Roboto Slab', serif; font-size: 20px;">
+                    Kaazhcha (Community Vision Camps)
+                  </h4>
+                  <p class="card-text text-secondary mb-3" style="font-size: 14px; line-height: 1.65;">
+                    Kaazhcha conducts free comprehensive eye checkup camps across Sardhana and neighboring villages. The initiative focuses on early vision diagnosis, free spectacles distribution, and cataract identification for senior citizens and students.
+                  </p>
+                  <ul class="prog-highlights flex-grow-1">
+                    <li><i class="fa-solid fa-circle-check"></i> Free vision screening and eye refraction tests by optometrists</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Free distribution of customized corrective spectacles to the needy</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Cataract identification and guidance for charitable surgery support</li>
+                  </ul>
+                  <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                    <small class="text-muted" style="font-size: 11.5px;">Guidance: <strong>Ainuddin Shah Ji</strong></small>
+                    <a href="{% url 'contact' %}" class="btn btn-sm btn-primary px-3 py-1" style="font-size: 12.5px;">
+                      Organize A Camp <i class="fa-solid fa-angle-right ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 8: Community Relief & Outreach -->
+            <div class="col-lg-6 program-item" data-category="community">
+              <div class="card program-detail-card h-100" id="community-relief">
+                <div class="program-img-wrap">
+                  <img src="{% static 'images/slide-ainuddin.jpg' %}" 
+                       class="program-img" 
+                       alt="Community Relief & Outreach - Ainuddin Shah Ji" 
+                       style="object-position: 85% center;">
+                  <span class="program-badge-tag"><i class="fa-solid fa-hands-holding-child me-1"></i> Grassroots Relief</span>
+                </div>
+                <div class="card-body p-4 d-flex flex-column">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge px-2 py-1" style="background-color: #f3e9de; color: #B65E3C; font-size: 11px;">SOCIAL WELFARE</span>
+                    <small class="text-muted"><i class="fa-solid fa-location-dot text-orange me-1"></i> Sardhana District</small>
+                  </div>
+                  <h4 class="card-title fw-bold mb-2" style="color: #292522; font-family: 'Roboto Slab', serif; font-size: 20px;">
+                    Community Welfare &amp; Seasonal Relief
+                  </h4>
+                  <p class="card-text text-secondary mb-3" style="font-size: 14px; line-height: 1.65;">
+                    Direct grassroots assistance for destitute households across Sardhana. Our volunteer network coordinates seasonal winter blanket drives, emergency grocery kits, and relief distribution under the supervision of Ainuddin Shah Ji.
+                  </p>
+                  <ul class="prog-highlights flex-grow-1">
+                    <li><i class="fa-solid fa-circle-check"></i> Winter warmth drives delivering warm blankets and woolens to the poor</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Essential food grain and grocery kits for destitute elderly individuals</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Emergency relief and immediate social support during seasonal hardship</li>
+                  </ul>
+                  <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                    <small class="text-muted" style="font-size: 11.5px;">Guidance: <strong>Ainuddin Shah Ji</strong></small>
+                    <a href="{% url 'contact' %}" class="btn btn-sm btn-primary px-3 py-1" style="font-size: 12.5px;">
+                      Support Outreach <i class="fa-solid fa-angle-right ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Empty State (Hidden by default, shown if filter has no cards) -->
+          <div id="noProgramAlert" class="col-12 text-center py-5 d-none">
+            <div class="p-4 rounded-3 border bg-light">
+              <i class="fa-regular fa-folder-open text-muted fa-2x mb-2"></i>
+              <p class="text-muted mb-0">No programmes currently listed in this category.</p>
+            </div>
+          </div>
+
+          <!-- How to Support Banner / Callout -->
+          <div class="row mt-5 pt-3">
+            <div class="col-12">
+              <div class="card bg-white border p-4 p-md-5 rounded-4 shadow-sm" style="border-left: 5px solid #B65E3C !important;">
+                <div class="row align-items-center g-4">
+                  <div class="col-lg-8">
+                    <span class="badge px-3 py-1 mb-2 text-uppercase" style="background-color: #f3e9de; color: #B65E3C; font-size: 11px; font-weight: 700;">
+                      <i class="fa-solid fa-hand-holding-heart me-1"></i> Stand With Our Mission
+                    </span>
+                    <h4 class="fw-bold mb-2" style="color: #292522; font-family: 'Roboto Slab', serif;">
+                      How You Can Support Our Social Welfare Programmes
+                    </h4>
+                    <p class="text-secondary small mb-3" style="line-height: 1.6;">
+                      Under the visionary leadership of <strong>Mr. Ainuddin Shah Ji</strong>, Care &amp; Share Society invites compassionate individuals, professionals, and volunteers to share their time and resources. Together, we can ensure that every child learns, every patient receives treatment, and no family is left behind.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 small text-muted">
+                      <span><i class="fa-solid fa-phone text-orange me-1"></i> 0484 2377369</span>
+                      <span><i class="fa-regular fa-envelope text-orange me-1"></i> info@careandshare.in</span>
+                      <span><i class="fa-solid fa-location-dot text-orange me-1"></i> Sardhana, Meerut District, UP</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 text-lg-end text-start">
+                    <div class="d-flex flex-column flex-sm-row flex-lg-column gap-2 justify-content-end">
+                      <a href="{% url 'contact' %}" class="btn btn-primary px-4 py-2" style="font-size: 13px; font-weight: 600;">
+                        <i class="fa-regular fa-envelope me-1"></i> CONNECT WITH SOCIETY DESK
+                      </a>
+                      <a href="{% url 'people' %}" class="btn btn-outline-secondary px-4 py-2" style="font-size: 13px; font-weight: 600;">
+                        <i class="fa-solid fa-users me-1"></i> MEET PEOPLE BEHIND
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.prog-filter-btn');
+  const programItems = document.querySelectorAll('.program-item');
+  const emptyAlert = document.getElementById('noProgramAlert');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filterValue = this.getAttribute('data-filter');
+      let visibleCount = 0;
+
+      programItems.forEach(item => {
+        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+          item.style.display = '';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      if (emptyAlert) {
+        if (visibleCount === 0) {
+          emptyAlert.classList.remove('d-none');
+        } else {
+          emptyAlert.classList.add('d-none');
+        }
+      }
+    });
+  });
+
+  // Handle URL hash on load (e.g., #hridayasparsham, #vazhikatti)
+  if (window.location.hash) {
+    const targetElement = document.querySelector(window.location.hash);
+    if (targetElement) {
+      setTimeout(() => {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        targetElement.style.boxShadow = '0 0 0 3px #B65E3C, 0 10px 28px rgba(41, 37, 34, 0.18)';
+        setTimeout(() => {
+          targetElement.style.boxShadow = '';
+        }, 2200);
+      }, 250);
+    }
+  }
+});
+</script>
+{% endblock %}
