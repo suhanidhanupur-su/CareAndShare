@@ -1,0 +1,457 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Ainuddin Shah Ji - Media &amp; Updates | Care &amp; Share Society Sardhana{% endblock %}
+
+{% block extra_css %}
+<style>
+  .media-banner {
+    background: linear-gradient(105deg, #c4a55c 0%, #ecd79b 40%, #f4e7b8 70%, #d8be7c 100%) !important;
+    border-bottom: 1px solid rgba(196, 165, 92, 0.35) !important;
+    padding: 18px 0 !important;
+    overflow: hidden !important;
+  }
+  .media-banner-portrait-container {
+    display: inline-block !important;
+    position: relative !important;
+    max-width: 140px !important;
+  }
+  .media-banner-portrait {
+    width: 130px !important;
+    height: 155px !important;
+    max-width: 130px !important;
+    max-height: 155px !important;
+    object-fit: cover !important;
+    object-position: center 20% !important;
+    border-radius: 12px !important;
+    border: 3px solid #ffffff !important;
+    box-shadow: 0 4px 16px rgba(41, 37, 34, 0.18) !important;
+    display: block !important;
+    margin-left: auto !important;
+  }
+  @media (max-width: 767.98px) {
+    .media-banner-portrait {
+      width: 110px !important;
+      height: 130px !important;
+      max-width: 110px !important;
+      max-height: 130px !important;
+      margin: 0 auto !important;
+    }
+  }
+  @media (max-width: 575.98px) {
+    .media-banner-portrait {
+      width: 90px !important;
+      height: 110px !important;
+      max-width: 90px !important;
+      max-height: 110px !important;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- ================= MEDIA HERO BANNER ================= -->
+<div class="container-fluid g-0 media-banner">
+  <div class="container">
+    <div class="row align-items-center g-3 g-md-4">
+      <div class="col-8 col-md-8 col-lg-9 py-2 text-start">
+        <h2 class="about-banner-title mb-2" style="font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 26px; color: #24201d; letter-spacing: 0.5px; line-height: 1.25;">Ainuddin Shah Ji &bull; Media &amp; Updates</h2>
+        <p class="about-banner-lead mb-0" style="font-family: 'Open Sans', sans-serif; font-size: 14.5px; line-height: 1.55; color: #3a342f; max-width: 660px;">
+          Official messages, leadership guidance, and community welfare updates from Senior Social Worker <span class="fw-bold" style="color: #1a1816;">Mr. Ainuddin Shah Ji</span>.
+        </p>
+      </div>
+      <div class="col-4 col-md-4 col-lg-3 text-end py-1">
+        <div class="media-banner-portrait-container">
+          <img src="{% static 'images/ainuddin_shah.jpg' %}" 
+               alt="Mr. Ainuddin Shah - Senior Social Worker" 
+               class="media-banner-portrait img-fluid"
+               width="130"
+               height="155">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MAIN MEDIA CONTENT ================= -->
+<div class="container-fluid py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div class="card about-card rounded-4 p-4 p-md-5">
+          
+          <!-- Page Header -->
+          <div class="row">
+            <div class="col-12">
+              <h3 class="page-head">MEDIA &amp; UPDATES</h3>
+              <h4 class="text-orange fw-bold mb-3">Ainuddin Shah Ji &bull; Messages, Leadership &amp; Community Updates</h4>
+              <p class="lead fs-6 text-secondary mb-4">
+                Explore verified messages, social welfare vision, and community outreach updates from Senior Social Worker Mr. Ainuddin Shah Ji, guiding Care &amp; Share Society Sardhana.
+              </p>
+            </div>
+          </div>
+
+          <!-- Featured Social-Post Style Spotlight Card -->
+          {% if featured_post %}
+          <div class="row mb-5">
+            <div class="col-12">
+              <div class="card featured-social-card">
+                <div class="post-header">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="{% static 'images/ainuddin_shah.jpg' %}" alt="{{ featured_post.author_name }}" class="post-author-avatar">
+                    <div>
+                      <h6 class="post-author-name">{{ featured_post.author_name }}</h6>
+                      <p class="post-author-role">{{ featured_post.author_role }}</p>
+                    </div>
+                  </div>
+                  <span class="post-badge">
+                    <i class="fa-solid fa-bullhorn me-1"></i> {{ featured_post.get_category_display }}
+                  </span>
+                </div>
+
+                <div class="row g-0 align-items-center">
+                  <div class="col-lg-6">
+                    <div class="featured-social-img-wrap">
+                      <img src="{{ featured_post.image.url }}" 
+                           alt="{{ featured_post.title }}" 
+                           class="featured-social-img"
+                           style="object-position: 85% center;">
+                    </div>
+                  </div>
+                  <div class="col-lg-6 p-4 p-lg-5">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                      <span class="badge px-3 py-1 text-uppercase" style="background-color: #f3e9de; color: #B65E3C; font-size: 11px; font-weight: 700;">{{ featured_post.get_category_display }}</span>
+                      <small class="text-muted">&bull; Care &amp; Share Society Sardhana</small>
+                    </div>
+                    <h3 class="post-title mb-3" style="font-size: 22px; color: #292522;">
+                      {{ featured_post.title }}
+                    </h3>
+                    <p class="text-secondary mb-4" style="line-height: 1.7; font-size: 14.5px;">
+                      {{ featured_post.content }}
+                    </p>
+                    <div class="d-flex flex-wrap align-items-center gap-3 pt-2 border-top">
+                      {% if featured_post.external_link %}
+                      <a href="{{ featured_post.external_link }}" class="btn btn-primary px-4 py-2" style="font-size: 13px; font-weight: 600;">
+                        {{ featured_post.link_text|upper }} <i class="fa-solid fa-angles-right ms-1"></i>
+                      </a>
+                      {% endif %}
+                      <a href="{% url 'contact' %}" class="btn btn-outline-secondary px-3 py-2" style="font-size: 13px;">
+                        Connect With Society Desk
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
+          <!-- Category Filter Tabs -->
+          <div class="row mb-4">
+            <div class="col-12">
+              <div class="d-flex flex-wrap gap-2 align-items-center">
+                <span class="small fw-bold text-muted me-2"><i class="fa-solid fa-filter text-orange me-1"></i> Filter:</span>
+                <button type="button" class="media-filter-btn active" data-filter="all">All Updates</button>
+                <button type="button" class="media-filter-btn" data-filter="leadership">Leadership &amp; Vision</button>
+                <button type="button" class="media-filter-btn" data-filter="welfare">Social Welfare</button>
+                <button type="button" class="media-filter-btn" data-filter="outreach">Community Outreach</button>
+                <button type="button" class="media-filter-btn" data-filter="messages">Public Messages</button>
+                <button type="button" class="media-filter-btn" data-filter="updates">Society Updates</button>
+                <button type="button" class="media-filter-btn" data-filter="awareness">Social Awareness</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Media Cards Grid (Social-Media-Style Cards) -->
+          <div class="row g-4" id="mediaGrid">
+            {% if media_posts %}
+              {% for post in media_posts %}
+              <div class="col-lg-4 col-md-6 media-item" data-category="{{ post.category }}">
+                <div class="social-post-card h-100">
+                  <div class="post-header">
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="{% static 'images/ainuddin_shah.jpg' %}" alt="{{ post.author_name }}" class="post-author-avatar">
+                      <div>
+                        <h6 class="post-author-name">{{ post.author_name }}</h6>
+                        <p class="post-author-role">{{ post.author_role }}</p>
+                      </div>
+                    </div>
+                    <span class="post-badge">{{ post.get_category_display }}</span>
+                  </div>
+                  <div class="post-img-wrap">
+                    <img src="{{ post.image.url }}" class="post-img" alt="{{ post.title }}" style="object-position: center 20%;">
+                  </div>
+                  <div class="post-body">
+                    <h5 class="post-title">{{ post.title }}</h5>
+                    <p class="post-text">
+                      {{ post.content }}
+                    </p>
+                    <div class="post-footer">
+                      <span class="text-muted small"><i class="fa-solid fa-location-dot me-1 text-orange"></i> Sardhana, UP</span>
+                      {% if post.external_link %}
+                      <a href="{{ post.external_link }}" class="post-link">{{ post.link_text }} <i class="fa-solid fa-angle-right ms-1"></i></a>
+                      {% else %}
+                      <a href="{% url 'about' %}" class="post-link">Learn More <i class="fa-solid fa-angle-right ms-1"></i></a>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            {% else %}
+            <!-- Card 1: Leadership & Vision -->
+            <div class="col-lg-4 col-md-6 media-item" data-category="leadership">
+              <div class="social-post-card h-100">
+                <div class="post-header">
+                  <div class="d-flex align-items-center gap-2">
+                    <img src="{% static 'images/ainuddin_shah.jpg' %}" alt="Mr. Ainuddin Shah" class="post-author-avatar">
+                    <div>
+                      <h6 class="post-author-name">Mr. Ainuddin Shah Ji</h6>
+                      <p class="post-author-role">Senior Social Worker</p>
+                    </div>
+                  </div>
+                  <span class="post-badge">Leadership</span>
+                </div>
+                <div class="post-img-wrap">
+                  <img src="{% static 'images/ainuddin_shah.jpg' %}" class="post-img" alt="Mr. Ainuddin Shah Leadership" style="object-position: center 20%;">
+                </div>
+                <div class="post-body">
+                  <h5 class="post-title">Serving Humanity is Our Highest Moral Duty</h5>
+                  <p class="post-text">
+                    "Through Care &amp; Share Society Sardhana, we have resolved to reach the poorest and most vulnerable, ensuring that lack of resources never denies a child an education or a patient life-saving healthcare."
+                  </p>
+                  <div class="post-footer">
+                    <span class="text-muted small"><i class="fa-solid fa-location-dot me-1 text-orange"></i> Sardhana, UP</span>
+                    <a href="{% url 'about' %}" class="post-link">View Leadership Profile <i class="fa-solid fa-angle-right ms-1"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Social Welfare -->
+            <div class="col-lg-4 col-md-6 media-item" data-category="welfare">
+              <div class="social-post-card h-100">
+                <div class="post-header">
+                  <div class="d-flex align-items-center gap-2">
+                    <img src="{% static 'images/ainuddin_shah.jpg' %}" alt="Care &amp; Share" class="post-author-avatar">
+                    <div>
+                      <h6 class="post-author-name">Care &amp; Share Society</h6>
+                      <p class="post-author-role">Sardhana &bull; Non-Profit</p>
+                    </div>
+                  </div>
+                  <span class="post-badge">Social Welfare</span>
+                </div>
+                <div class="post-img-wrap">
+                  <img src="{% static 'images/slide-ainuddin.jpg' %}" class="post-img" alt="Social Welfare" style="object-position: 80% center;">
+                </div>
+                <div class="post-body">
+                  <h5 class="post-title">Sharing is Absolute Caring &mdash; Core Philosophy</h5>
+                  <p class="post-text">
+                    Care &amp; Share Society, Sardhana is dedicated to serving humanity under Ainuddin Shah Ji's guidance. Through care, sharing, compassion, and collective responsibility, we aim to create meaningful change.
+                  </p>
+                  <div class="post-footer">
+                    <span class="text-muted small"><i class="fa-solid fa-shield-heart me-1 text-orange"></i> Society Vision</span>
+                    <a href="{% url 'about' %}" class="post-link">Read Foundation Creed <i class="fa-solid fa-angle-right ms-1"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Community Outreach -->
+            <div class="col-lg-4 col-md-6 media-item" data-category="outreach">
+              <div class="social-post-card h-100">
+                <div class="post-header">
+                  <div class="d-flex align-items-center gap-2">
+                    <img src="{% static 'images/ainuddin_shah.jpg' %}" alt="Outreach Desk" class="post-author-avatar">
+                    <div>
+                      <h6 class="post-author-name">Community Outreach</h6>
+                      <p class="post-author-role">Care &amp; Share Sardhana</p>
+                    </div>
+                  </div>
+                  <span class="post-badge">Outreach</span>
+                </div>
+                <div class="post-img-wrap">
+                  <img src="{% static 'images/slide-ainuddin-2.jpg' %}" class="post-img" alt="Community Outreach" style="object-position: 15% center;">
+                </div>
+                <div class="post-body">
+                  <h5 class="post-title">Moving Step by Step &mdash; Reaching Deprived Families</h5>
+                  <p class="post-text">
+                    "We strive to share the burden of the less fortunate, through the efforts of those who have more than enough resources." Grassroots volunteers actively mobilize aid and community support across Sardhana.
+                  </p>
+                  <div class="post-footer">
+                    <span class="text-muted small"><i class="fa-solid fa-hands-holding-child me-1 text-orange"></i> Grassroots Work</span>
+                    <a href="{% url 'gallery' %}" class="post-link">View Society Gallery <i class="fa-solid fa-angle-right ms-1"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: Public Messages -->
+            <div class="col-lg-4 col-md-6 media-item" data-category="messages">
+              <div class="social-post-card h-100">
+                <div class="post-header">
+                  <div class="d-flex align-items-center gap-2">
+                    <img src="{% static 'images/ainuddin_shah.jpg' %}" alt="Mr. Ainuddin Shah" class="post-author-avatar">
+                    <div>
+                      <h6 class="post-author-name">Mr. Ainuddin Shah Ji</h6>
+                      <p class="post-author-role">Senior Social Worker</p>
+                    </div>
+                  </div>
+                  <span class="post-badge">Public Messages</span>
+                </div>
+                <div class="post-img-wrap">
+                  <img src="{% static 'images/ainuddin_shah.jpg' %}" class="post-img" alt="Public Appeal" style="object-position: center 15%;">
+                </div>
+                <div class="post-body">
+                  <h5 class="post-title">Every Contribution Brings Hope to Families in Need</h5>
+                  <p class="post-text">
+                    "Every contribution and helping hand of yours will be fully utilized to uplift communities and bring hope to families in need. Looking forward to your compassionate support and participation."
+                  </p>
+                  <div class="post-footer">
+                    <span class="text-muted small"><i class="fa-solid fa-heart me-1 text-orange"></i> Community Message</span>
+                    <a href="{% url 'people' %}" class="post-link">Read Full Message <i class="fa-solid fa-angle-right ms-1"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5: Society Updates -->
+            <div class="col-lg-4 col-md-6 media-item" data-category="updates">
+              <div class="social-post-card h-100">
+                <div class="post-header">
+                  <div class="d-flex align-items-center gap-2">
+                    <img src="{% static 'images/ainuddin_shah.jpg' %}" alt="Administration" class="post-author-avatar">
+                    <div>
+                      <h6 class="post-author-name">Society Administration</h6>
+                      <p class="post-author-role">Care &amp; Share Sardhana</p>
+                    </div>
+                  </div>
+                  <span class="post-badge">Society Updates</span>
+                </div>
+                <div class="post-img-wrap">
+                  <img src="{% static 'images/slide-ainuddin.jpg' %}" class="post-img" alt="Society Updates" style="object-position: 85% center;">
+                </div>
+                <div class="post-body">
+                  <h5 class="post-title">Care &amp; Share Society Sardhana &mdash; Guiding Leadership</h5>
+                  <p class="post-text">
+                    Dedicated to community welfare under the leadership of respected Senior Social Worker Ainuddin Shah Ji, upholding transparency, mutual support, and dignity for every individual.
+                  </p>
+                  <div class="post-footer">
+                    <span class="text-muted small"><i class="fa-solid fa-users me-1 text-orange"></i> Leadership</span>
+                    <a href="{% url 'people' %}" class="post-link">Meet People Behind <i class="fa-solid fa-angle-right ms-1"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6: Social Awareness -->
+            <div class="col-lg-4 col-md-6 media-item" data-category="awareness">
+              <div class="social-post-card h-100">
+                <div class="post-header">
+                  <div class="d-flex align-items-center gap-2">
+                    <img src="{% static 'images/ainuddin_shah.jpg' %}" alt="Mr. Ainuddin Shah" class="post-author-avatar">
+                    <div>
+                      <h6 class="post-author-name">Mr. Ainuddin Shah Ji</h6>
+                      <p class="post-author-role">Senior Social Worker</p>
+                    </div>
+                  </div>
+                  <span class="post-badge">Social Awareness</span>
+                </div>
+                <div class="post-img-wrap">
+                  <img src="{% static 'images/slide-ainuddin-2.jpg' %}" class="post-img" alt="Social Awareness" style="object-position: 18% center;">
+                </div>
+                <div class="post-body">
+                  <h5 class="post-title">Equal Opportunity to Live a Healthy &amp; Dignified Life</h5>
+                  <p class="post-text">
+                    "We strongly believe that every individual deserves an opportunity to live a healthy, dignified, and fulfilling life. We are all bound by our duty to society and to our fellow citizens."
+                  </p>
+                  <div class="post-footer">
+                    <span class="text-muted small"><i class="fa-solid fa-hands-praying me-1 text-orange"></i> Moral Duty</span>
+                    <a href="{% url 'contact' %}" class="post-link">Connect With Us <i class="fa-solid fa-angle-right ms-1"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+
+          </div>
+
+          <!-- Empty State (Hidden by default, shown if no cards match filter) -->
+          <div id="noMediaAlert" class="col-12 text-center py-5 d-none">
+            <div class="p-4 rounded-3 border bg-light">
+              <i class="fa-regular fa-folder-open text-muted fa-2x mb-2"></i>
+              <p class="text-muted mb-0">No updates currently available in this category.</p>
+            </div>
+          </div>
+
+          <!-- Media Desk & Press Information Card -->
+          <div class="row mt-5 pt-3">
+            <div class="col-12">
+              <div class="card bg-white border p-4 p-md-5 rounded-4 shadow-sm" style="border-left: 5px solid #B65E3C !important;">
+                <div class="row align-items-center g-4">
+                  <div class="col-lg-8">
+                    <span class="badge px-3 py-1 mb-2 text-uppercase" style="background-color: #f3e9de; color: #B65E3C; font-size: 11px; font-weight: 700;">
+                      <i class="fa-solid fa-newspaper me-1"></i> Media &amp; Public Relations Desk
+                    </span>
+                    <h4 class="fw-bold mb-2" style="color: #292522; font-family: 'Roboto Slab', serif;">Connect with Our Media Team</h4>
+                    <p class="text-secondary small mb-3">
+                      For official statements, society announcements, or inquiries regarding community initiatives led by <strong>Mr. Ainuddin Shah Ji</strong>, please reach out to our team in Sardhana.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 small text-muted">
+                      <span><i class="fa-solid fa-phone text-orange me-1"></i> 0484 2377369</span>
+                      <span><i class="fa-regular fa-envelope text-orange me-1"></i> info@careandshare.in</span>
+                      <span><i class="fa-solid fa-location-dot text-orange me-1"></i> Sardhana, Meerut District, UP</span>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 text-lg-end text-start">
+                    <a href="{% url 'contact' %}" class="btn btn-primary px-4 py-2" style="font-size: 13px; font-weight: 600;">
+                      <i class="fa-regular fa-envelope me-1"></i> CONTACT MEDIA DESK
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.media-filter-btn');
+  const mediaItems = document.querySelectorAll('.media-item');
+  const emptyAlert = document.getElementById('noMediaAlert');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filterValue = this.getAttribute('data-filter');
+      let visibleCount = 0;
+
+      mediaItems.forEach(item => {
+        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+          item.style.display = '';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      if (emptyAlert) {
+        if (visibleCount === 0) {
+          emptyAlert.classList.remove('d-none');
+        } else {
+          emptyAlert.classList.add('d-none');
+        }
+      }
+    });
+  });
+});
+</script>
+{% endblock %}

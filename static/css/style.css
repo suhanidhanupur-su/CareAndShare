@@ -981,4 +981,194 @@ ul.footer-social li i:hover {
   }
 }
 
+/* =========================================
+   MEDIA & UPDATES SECTION (Ainuddin Shah Ji)
+========================================= */
+.sec-media {
+  background-color: #fbf8f5;
+  padding: 80px 0;
+  scroll-margin-top: 130px !important;
+}
+.featured-social-card {
+  border: 1px solid #eae3dc;
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 6px 24px rgba(41, 37, 34, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.featured-social-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(41, 37, 34, 0.14);
+}
+.featured-social-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  max-height: 380px;
+  overflow: hidden;
+  background-color: #f7f3ee;
+}
+.featured-social-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+.featured-social-card:hover .featured-social-img {
+  transform: scale(1.04);
+}
+/* Social-Media-Style Card */
+.social-post-card {
+  border: 1px solid #eae3dc;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  box-shadow: 0 4px 18px rgba(41, 37, 34, 0.05);
+}
+.social-post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(41, 37, 34, 0.12);
+}
+.post-header {
+  padding: 13px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f2ede7;
+  background-color: #fcfaf8;
+}
+.post-author-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  border: 2px solid #B65E3C;
+}
+.post-author-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #292522;
+  margin-bottom: 0;
+  line-height: 1.25;
+}
+.post-author-role {
+  font-size: 11px;
+  color: #8c827a;
+  margin-bottom: 0;
+}
+.post-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background-color: #f3e9de;
+  color: #B65E3C;
+  white-space: nowrap;
+}
+.post-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background-color: #f5efe8;
+}
+.post-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+.social-post-card:hover .post-img {
+  transform: scale(1.06);
+}
+.post-body {
+  padding: 18px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.post-title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #292522;
+  line-height: 1.35;
+  margin-bottom: 10px;
+  transition: color 0.2s ease;
+}
+.social-post-card:hover .post-title {
+  color: #B65E3C;
+}
+.post-text {
+  font-size: 13.5px;
+  color: #5a524c;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  flex-grow: 1;
+}
+.post-footer {
+  padding-top: 12px;
+  border-top: 1px solid #f2ede7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.post-link {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #B65E3C;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.post-link:hover {
+  color: #8c4224;
+  text-decoration: underline;
+}
+.media-filter-btn {
+  border: 1px solid #eae3dc;
+  background-color: #ffffff;
+  color: #292522;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 30px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.media-filter-btn:hover,
+.media-filter-btn.active {
+  background-color: #B65E3C;
+  border-color: #B65E3C;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(182, 94, 60, 0.25);
+}
+@media (max-width: 991.98px) {
+  .sec-media {
+    scroll-margin-top: 110px !important;
+  }
+}
+@media (max-width: 767.98px) {
+  .sec-media {
+    padding: 60px 0;
+    scroll-margin-top: 95px !important;
+  }
+  .featured-social-img-wrap {
+    min-height: 220px;
+  }
+  .post-img-wrap {
+    height: 190px;
+  }
+}
+
+
+
 
