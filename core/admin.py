@@ -4,10 +4,33 @@ from .models import ContactMessage, GalleryImage, MediaPost
 
 @admin.register(ContactMessage)
 class ContactMessageAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'phone', 'subject', 'created_at')
-    search_fields = ('name', 'email', 'subject', 'message')
-    list_filter = ('created_at',)
-    readonly_fields = ('name', 'email', 'phone', 'subject', 'message', 'created_at')
+    list_display = ('name_display', 'email', 'phone', 'subject', 'message_snippet', 'created_at')
+    list_display_links = ('name_display', 'email')
+    search_fields = ('name', 'email', 'phone', 'subject', 'message')
+    list_filter = ('subject', 'created_at')
+    date_hierarchy = 'created_at'
+
+    fieldsets = (
+        ('Sender Information', {
+            'fields': ('name', 'email', 'phone')
+        }),
+        ('Inquiry & Message', {
+            'fields': ('subject', 'message', 'created_at')
+        }),
+    )
+
+    def name_display(self, obj):
+        return obj.name if obj.name else f"(Message #{obj.id})"
+    name_display.short_description = "Name"
+
+    def message_snippet(self, obj):
+        if obj.message and len(obj.message) > 50:
+            return obj.message[:47] + "..."
+        return obj.message or "-"
+    message_snippet.short_description = "Message"
+
+    def get_readonly_fields(self, request, obj=None):
+        return ('created_at',)
 
 
 @admin.register(GalleryImage)
